@@ -1,3 +1,17 @@
-<html >
-    
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Mitrochista</title>
+</head>
+
+    <form method="post" id="search">
+        {% csrf_token %}
+        <input placeholder="Search" type="text" name="search" ></input>
+        <input type="submit"></input>
+    </form>
+
+<body>
+</body>
 </html>

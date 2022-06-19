@@ -25,7 +25,7 @@ def debug_task(self):
 
 @app.on_after_configure.connect
 def setup_periodic_tasks(sender, **kwargs):
-    sender.add_periodic_task(crontab(hour=10, minute=28),scrap.s())
+    sender.add_periodic_task(crontab(hour=11),scrap.s()) # , minute=30
 
 
 
@@ -33,4 +33,6 @@ def setup_periodic_tasks(sender, **kwargs):
 # DO THIS 2:10 AM
 @app.task
 def scrap ():
+
+    #  todo : use thereding
     init_scrap.init()

@@ -68,3 +68,15 @@ class PublishCourse(generics.CreateAPIView):
     queryset = models.Publish.objects.all()
     serializer_class = serializers.PublishCourse
     permission_classes = [IsAdminUser]
+
+class UpdatePublishCourse(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.Publish.objects.all()
+    serializer_class = serializers.PublishCourse
+    lookup_field = 'course'
+    permission_classes = [IsAdminUser]
+
+class UpdatePublisher(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.Publisher.objects.all()
+    serializer_class = serializers.Publisher
+    lookup_field = 'id'
+    permission_classes = [IsAdminUser]

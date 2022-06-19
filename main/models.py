@@ -1,16 +1,8 @@
-from statistics import mode
+from pickle import TRUE
 from django.db import models
 import uuid
 from  datetime import datetime
 
-
-
-class SocalMedia(models.Model):
-    id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
-    platform = models.CharField(max_length=200)
-
-    def __str__(self):
-        return self.platform
 
 
 class Course (models.Model):
@@ -30,6 +22,14 @@ class Course (models.Model):
 
     def __str__(self):
         return str(self.title)
+
+class SocalMedia(models.Model):
+    id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
+    platform = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.platform
+
 
 
 class User (models.Model):
@@ -80,7 +80,7 @@ class PublisherSocalMedia (models.Model):
 class Publish (models.Model):
     id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
     publisher = models.ForeignKey(Publisher,on_delete=models.CASCADE)
-    course = models.ForeignKey(Course,on_delete=models.CASCADE)
+    course = models.ForeignKey(Course,on_delete=models.CASCADE,unique=True)
     is_visible = models.BooleanField()
 
 
@@ -99,7 +99,7 @@ class TAG (models.Model):
 
 class Teacher (models.Model):
     id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200,unique=True)
     score = models.BigIntegerField(default=0)
 
     def __str__(self):
@@ -108,16 +108,17 @@ class Teacher (models.Model):
 
 class TeacherSocalMedia(models.Model):
     id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
+    teacher = models.ForeignKey(Teacher,on_delete=models.CASCADE)
     media = models.ForeignKey(SocalMedia,on_delete=models.CASCADE)
     url = models.URLField()
 
 
 class CourseTAG (models.Model):
     id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
-    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE,unique=True)
     publisher = models.ForeignKey(Publisher,on_delete=models.CASCADE)
-    tag = models.ForeignKey(TAG,on_delete=models.CASCADE)
-    rank = models.BigIntegerField(default=0)
+    tag = models.ManyToManyField(TAG,related_name='course_tag_rel')
+    rank = models.JSONField()
 
     def __str__(self):
         return str(self.course)
@@ -126,7 +127,7 @@ class CourseTAG (models.Model):
 class TeacherMakeCourse (models.Model):
     id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
     teacher = models.ForeignKey(Teacher,on_delete=models.CASCADE)
-    Course = models.ForeignKey(Course,on_delete=models.CASCADE)
+    Course = models.ForeignKey(Course,on_delete=models.CASCADE,unique=True)
     date = models.DateTimeField(default=datetime.now())
 
     def __str__(self):

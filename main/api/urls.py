@@ -12,6 +12,8 @@ urlpatterns = [
     path('create/course/teacher/',views.AddCourseTeacher.as_view()),
     path('create/coursetag/',views.AddCourseTag.as_view()),
     path('create/course/publish/',views.PublishCourse.as_view()),
+    path('update/course/publish/<uuid:course>',views.UpdatePublishCourse.as_view()),
+    path('publisher/<uuid:id>',views.UpdatePublisher.as_view()),
 
 ]
 

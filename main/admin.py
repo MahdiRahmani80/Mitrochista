@@ -24,8 +24,8 @@ class Tag (admin.ModelAdmin):
     list_filter = ('rank',)
 
 class CourseTag (admin.ModelAdmin):
-    list_display = ['course','publisher','tag','rank']
-    list_filter = ('publisher','rank',)
+    list_display = ['course','publisher']
+    list_filter = ('publisher',)
 
 class Publisher (admin.ModelAdmin):
     search_fields = ['name','url']
@@ -50,6 +50,9 @@ class PublishCourse (admin.ModelAdmin):
     list_display = ['course','publisher','is_visible']
     list_filter = ('publisher',)
 
+class TeacherSocalMediaAdmin(admin.ModelAdmin):
+    list_display = ['teacher','media','url']
+    list_filter = ('media',)
 
 admin.site.register(models.Course,Course)
 admin.site.register(models.SocalMedia)
@@ -60,7 +63,7 @@ admin.site.register(models.PublisherSocalMedia,PublisherMedia)
 admin.site.register(models.Publish,PublishCourse)
 admin.site.register(models.TAG,Tag)
 admin.site.register(models.Teacher,Teacher)
-admin.site.register(models.TeacherSocalMedia)
+admin.site.register(models.TeacherSocalMedia,TeacherSocalMediaAdmin)
 admin.site.register(models.CourseTAG,CourseTag)
 admin.site.register(models.TeacherMakeCourse,TeacherMkCurse)
 admin.site.register(models.CourseComment,CourseComment)

@@ -51,4 +51,7 @@ class PublishCourse (serializers.ModelSerializer):
         fields = '__all__'
 
 
-
+class Publisher (serializers.ModelSerializer):
+    class Meta:
+        model = models.Publisher
+        fields = '__all__'
