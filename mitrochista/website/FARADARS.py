@@ -10,7 +10,7 @@ import csv
 
 
 
-def getData(connection,all_tag,course_list,url,FIRST,LAST,csv_writer,pub_st,PUBLISHER,DOMAIN):
+def getData(connection,all_tag,course_list,url,FIRST,LAST,csv_writer,pub_st,PUBLISHER,DOMAIN,instaBot):
 
 
     for i in range(FIRST,LAST): # end number 208
@@ -124,7 +124,7 @@ def getData(connection,all_tag,course_list,url,FIRST,LAST,csv_writer,pub_st,PUBL
 
 
         # SAVE COURSE IN DB ********
-        save_course_in_db(connection,all_tag,course_list,d,master,title,cast,time,buy_count,linkes[link],time_str,csv_writer,pub_st,PUBLISHER,DOMAIN)
+        save_course_in_db(connection,all_tag,course_list,d,master,title,cast,time,buy_count,linkes[link],time_str,csv_writer,pub_st,PUBLISHER,DOMAIN,instaBot)
 
 
             # print (str(i) +" ** " +str(link))
@@ -133,7 +133,7 @@ def getData(connection,all_tag,course_list,url,FIRST,LAST,csv_writer,pub_st,PUBL
 
 
 
-def init(PUBLISHER,DOMAIN):
+def init(PUBLISHER,DOMAIN,instaBot):
 
     # Make DB connection
     # connection = psycopg2.connect(
@@ -162,7 +162,7 @@ def init(PUBLISHER,DOMAIN):
         for i in range(1,int(pages[1:-1][-1].text)):
 
             # getData(getAllTags(),getAllExistCourses(),mainURL,i,i+1)
-            t1 = threading.Thread(target=getData,args=(connection,all_tag,getAllExistCourses(connection),mainURL,i,i+1,writer,pub_st,PUBLISHER,DOMAIN))
+            t1 = threading.Thread(target=getData,args=(connection,all_tag,getAllExistCourses(connection),mainURL,i,i+1,writer,pub_st,PUBLISHER,DOMAIN,instaBot))
             t1.start()
             t1.join()
 

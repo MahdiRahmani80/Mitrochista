@@ -7,16 +7,55 @@ import sqlite3
 import threading
 from datetime import datetime
 import csv
+from PIL import Image, ImageDraw, ImageFont
+
+
+
+
+###  INSTA BOT
+def postInInsagram(cap,bot):
+    album_path = ["insta/we.jpg","insta/logo.jpg"]
+
+    bot.album_upload(
+        album_path,
+        caption = cap
+    )
+    # bot.upload_photo([Image,"insta/we.jpg"],caption=caption)
+
+
+def getInstaaption(title,d,master):
+
+    ans =""
+    ans += "نام دوره : "+title
+    ans +="\nنام مدرس" +master
+    ans += "\n\nبهترین دوره ها رو در میتروچیستا پیدا کنید \nمیتونید از صفحه پیجمون وارد سایتمون بشید "
+    ans += "\n\n "+ str(d)[:1800]
+    ans +="\n\n\nmitrochista.ir"
+
+    return ans
+
+
+def makeImage(course_id,img_title):
+    img = Image.new('RGB', (1080, 1080), color = "#092C4C")
+
+    fnt = ImageFont.truetype('insta/nunito_sans_black.ttf', 40)
+    d = ImageDraw.Draw(img)
+
+    d.multiline_text((900,900) , str(img_title), font=fnt, fill="#FFFF")
+
+    img.save('insta/img/'+ course_id +'.jpeg')
+
+    return 'insta/img/'+ course_id +'.jpeg'
 
 
 
 
 
 # SAVE IN DB
-def saveData(doc,tag_list,BOW_LIST,pub,domain):
+def saveData(doc,tag_list,BOW_LIST,pub,domain,master):
 
 	auth = ('mahdi', 'M@hdi1380')
-	d = {"course":str(doc),"publisher":pub,"tag":tag_list,"rank":BOW_LIST}
+	d = {"course":str(doc),"publisher":pub,"tag":tag_list,"rank":BOW_LIST,"master":master}
 	# print(d)
 
 	requests.post( domain +"api/create/coursetag/",json=d,auth=auth)
@@ -37,36 +76,36 @@ def getTagIdFromName(tag_list,tag):
             return i[0]
 
 
-def IR(id,dicsription,title,tags,pub,domain):
+def IR(id,dicsription,title,tags,pub,domain,master):
 
 	# for d in range(0,len( getAllDisc(docs)) ):
 		# TODO d.text
 		# splited_d_list = getAllDisc(docs[d]).get_text().split(' ')
 
-	ANSWER_LIST = []
-	BOW_LIST = []
+    ANSWER_LIST = []
+    BOW_LIST = []
 
-	for t in list(tags):
-		BOW = 0
+    for t in list(tags):
+        BOW = 0
 		# print (t)
 
-		for word in title.split(' '):
-			if str(t[1]).lower() in word:
-				BOW += 50
+        for word in title.split(' '):
+            if str(t[1]).lower() in str(word).lower() :
+                BOW += 50
 
 
-		for word in str(dicsription).split(' '):
-			if str(t[1]).lower() in word:
-				BOW += 1
+        for word in str(dicsription).split(' '):
+            if str(t[1]).lower() in str(word).lower():
+                BOW += 1
+
+        if (BOW !=0) and not (t[0] in ANSWER_LIST):
+
+            ANSWER_LIST.append(t[0])
+            BOW_LIST.append(BOW)
 
 
-		if BOW !=0:
-			ANSWER_LIST.append(t[0])
-			BOW_LIST.append(BOW)
 
-
-
-	saveData(id,ANSWER_LIST,BOW_LIST,pub,domain)
+    saveData(id,ANSWER_LIST,BOW_LIST,pub,domain,master)
 
 
 
@@ -95,6 +134,7 @@ def getAllExistCourses(connection):
 def getCourseFromID(connection,id):
     for i in getAllExistCourses(connection):
         if str(i[0]) == str(id):
+            # print(i)
             return i
 
 def publishCourse(DOMAIN,course_id,publisher_id,is_publish):
@@ -105,7 +145,8 @@ def publishCourse(DOMAIN,course_id,publisher_id,is_publish):
         "course":str(course_id)
     }
     auth = ('mahdi', 'M@hdi1380')
-    requests.post( DOMAIN + "api/create/course/publish/",json=d,auth=auth)
+    res = requests.post( DOMAIN + "api/create/course/publish/",json=d,auth=auth)
+    return str(res.json()["id"])
 
 
 def updatePublishCourse(DOMAIN,course_id,publisher_id,is_publish):
@@ -212,7 +253,7 @@ def getCourseRank(connection,id):
             if j.isdigit():
                 ans += int(j)
 
-    print(ans)
+    # print(ans)
     return ans
 
 def getTeacherRank(DOMAIN,master):
@@ -235,16 +276,17 @@ def getTeacherRank(DOMAIN,master):
 
 
 # SAVE IN DATABASE ->
-def save_course_in_db(connection,all_tag,course_list,d,master,title,cast,time,buy_count,link,time_str,csv_writer,pub_st,PUBLISHER,DOMAIN):
+def save_course_in_db(connection,all_tag,course_list,d,master,title,cast,time,buy_count,link,time_str,csv_writer,pub_st,PUBLISHER,DOMAIN,instaBot):
 
+    disc_post_insta = str(d).strip()
     res = None
 
     # UPDATE DATA
-    if str(link).strip() in list(allCourseURL(connection)) :
+    if str(link) in list(allCourseURL(connection)) :
         course_id = str(getCourseIdFromURL(connection,link))
-        print(str(course_id))
+        # print(str(course_id))
 
-        print("UPDATE MOOD")
+        # print("UPDATE MOOD")
 
         d ={
             'title':title,
@@ -276,7 +318,7 @@ def save_course_in_db(connection,all_tag,course_list,d,master,title,cast,time,bu
     else:
 
 
-        print("CREATE MOOD")
+        # print("CREATE MOOD")
 
         d ={
             'title':title,
@@ -295,13 +337,13 @@ def save_course_in_db(connection,all_tag,course_list,d,master,title,cast,time,bu
         res_cc = requests.post( DOMAIN + 'api/create/course/',json=d,auth=auth)
         if res_cc.status_code == 201:
             course_id = res_cc.json()['id']
-            print(str(course_id))
+            # print(str(course_id))
         else:
             course_id = str(getCourseIdFromURL(connection,link))
 
 
         # PUBLISH COURSE
-        publishCourse(DOMAIN,str(course_id),PUBLISHER,pub_st)
+        publish = publishCourse(DOMAIN,str(course_id),PUBLISHER,pub_st)
 
 
 
@@ -315,26 +357,26 @@ def save_course_in_db(connection,all_tag,course_list,d,master,title,cast,time,bu
 
             try:
                 at = {"name": str(master) ,"score": int(getScore(cast,buy_count,int(time),0,0)) }
-                print(at)
+                # print(at)
                 res_teacher = requests.post( DOMAIN + 'api/create/teacher/',json=at,auth=auth)
             finally:
 
-                print("EXEIST TEACHER")
+                # print("EXEIST TEACHER")
 
                 try:
                     cat = {"teacher": str(getIdFromTeacher(getTeachersList(connection),str(master))) ,"Course": str(course_id) }
                     requests.post( DOMAIN+'api/create/course/teacher/',json=cat,auth=auth)
                 finally:
-                    print("add course teacher")
+                    # print("add course teacher")
 
                     # Update score
                     try:
                         res = requests.get( DOMAIN +"api/update/teacher/"+str(master),auth=auth)
                     finally:
-                        print("get teacher info")
+                        # print("get teacher info")
 
-                        d = dict(res.json())
-                        newScore = int(getScore(cast,buy_count,int(time),0,0)) + abs(d["score"] - (int(getScore(cast,buy_count,int(time),0,0))))
+                        dic = dict(res.json())
+                        newScore = int(getScore(cast,buy_count,int(time),0,0)) + abs(dic["score"] - (int(getScore(cast,buy_count,int(time),0,0))))
                         dictionary = {"name":str(master),"score": newScore }
 
                         try:
@@ -346,15 +388,15 @@ def save_course_in_db(connection,all_tag,course_list,d,master,title,cast,time,bu
 
             res_teacher = None
 
-            print("CREATE TEACHER")
+            # print("CREATE TEACHER")
 
             # Create Teacher
             try:
                 at = {"name": str(master) ,"score": int(getScore(cast,buy_count,int(time),0,0)) }
-                print(at)
+                # print(at)
                 res_teacher = requests.post( DOMAIN + 'api/create/teacher/',json=at,auth=auth)
             finally:
-                print( "crate teacher status code -> " + str(res_teacher.status_code))
+                # print( "crate teacher status code -> " + str(res_teacher.status_code))
 
                 # course add teacher
                 if res_teacher.status_code == 201:
@@ -368,8 +410,8 @@ def save_course_in_db(connection,all_tag,course_list,d,master,title,cast,time,bu
                     requests.post( DOMAIN+'api/create/course/teacher/',json=cat,auth=auth)
 
                     res_get_teacher_status = requests.get( DOMAIN +"api/update/teacher/"+str(master),auth=auth)
-                    d = dict(res_get_teacher_status.json())
-                    newScore =d["score"] + (int(getScore(cast,buy_count,int(time),0,0)))
+                    di = dict(res_get_teacher_status.json())
+                    newScore =di["score"] + (int(getScore(cast,buy_count,int(time),0,0)))
                     dictionary = {"name":str(master),"score": newScore }
                     # print(d)
                     # print(newScore)
@@ -379,7 +421,15 @@ def save_course_in_db(connection,all_tag,course_list,d,master,title,cast,time,bu
 
 
 
-        # IR Algorithem
-        IR(str(course_id),d,title,all_tag,PUBLISHER,DOMAIN)
+            # Algorithem
+
+            IR(str(course_id),d,title,all_tag,publish,DOMAIN,str(master))
+            # POST in insta
+            # postInInsagram(getInstaaption(title,disc_post_insta,master),instaBot)
+
+            print(" -> DONE <- ")
+
+
+
 
 

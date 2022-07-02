@@ -1,0 +1,627 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An impressive and flawless site template that includes various UI elements and countless features, attractive ready-made blocks and rich pages, basically everything you need to create a unique and professional website.">
+  <meta name="keywords" content="bootstrap 5, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template">
+  <meta name="author" content="elemis">
+  <title>Mitrochista - Course Search Engine Platform</title>
+  <link rel="shortcut icon" href="{% static './img/Mitrochista.png' %}">
+  <link rel="stylesheet" href="{% static './assets/css/plugins.css' %}">
+  <link rel="stylesheet" href="{% static './assets/css/style.css' %}">
+  <link rel="stylesheet" href="{% static './assets/css/colors/purple.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
+</head>
+
+<body style="font-family:'Open Sans'">
+  <div class="content-wrapper">
+
+    <header class="wrapper bg-soft-primary">
+        <nav class="navbar navbar-expand-lg fancy navbar-light navbar-bg-light caret-none">
+          <div class="container">
+            <div class="navbar-collapse-wrapper bg-white d-flex flex-row flex-nowrap w-100 justify-content-between align-items-center">
+              <div class="navbar-brand w-100">
+                <a href="./index.html">
+                  <img src="{% static './img/Mitrochista.png' %}" style="widget:60dp;height:60px" srcset="{% static './img/Mitrochista.png' %} 2x" alt="" />
+                </a>
+              </div>
+              <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start" dir="ltr">
+                <div class="offcanvas-header d-lg-none d-xl-none">
+                  <a href="./index.html"><img src="{% static './assets/img/logo-light.png' %}" srcset="./assets/img/logo-light@2x.png 2x" alt="" /></a>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+                  <ul class="navbar-nav">
+
+                      <li class="nav-item dropdown dropdown-mega">
+                        <a class="nav-link dropdown-toggle" href="#">تماس با ما</a>
+                      </li>
+
+                      <li class="nav-item dropdown dropdown-mega">
+                          <a class="nav-link dropdown-toggle" href="#">درباره ما</a>
+                      </li>
+
+                      <li class="nav-item dropdown dropdown-mega">
+                          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">دسته بندی ها</a>
+                          <ul class="dropdown-menu mega-menu">
+                            <li class="mega-menu-content">
+                              <div class="row gx-0 gx-lg-3">
+                                <div class="col-lg-4">
+                                  <h6 class="dropdown-header">Usage</h6>
+                                  <ul class="list-unstyled cc-2 pb-lg-1">
+                                    <li><a class="dropdown-item" href="./docs/index.html">Get Started</a></li>
+                                    <li><a class="dropdown-item" href="./docs/forms.html">Forms</a></li>
+                                    <li><a class="dropdown-item" href="./docs/faq.html">FAQ</a></li>
+                                    <li><a class="dropdown-item" href="./docs/changelog.html">Changelog</a></li>
+                                    <li><a class="dropdown-item" href="./docs/credits.html">Credits</a></li>
+                                  </ul>
+                                  <h6 class="dropdown-header mt-lg-6">Styleguide</h6>
+                                  <ul class="list-unstyled cc-2">
+                                    <li><a class="dropdown-item" href="./docs/styleguide/colors.html">Colors</a></li>
+                                    <li><a class="dropdown-item" href="./docs/styleguide/fonts.html">Fonts</a></li>
+                                    <li><a class="dropdown-item" href="./docs/styleguide/icons-svg.html">SVG Icons</a></li>
+                                    <li><a class="dropdown-item" href="./docs/styleguide/icons-font.html">Font Icons</a></li>
+                                    <li><a class="dropdown-item" href="./docs/styleguide/illustrations.html">Illustrations</a></li>
+                                    <li><a class="dropdown-item" href="./docs/styleguide/backgrounds.html">Backgrounds</a></li>
+                                    <li><a class="dropdown-item" href="./docs/styleguide/misc.html">Misc</a></li>
+                                  </ul>
+                                </div>
+                                <!--/column -->
+                                <div class="col-lg-8">
+                                  <h6 class="dropdown-header">Elements</h6>
+                                  <ul class="list-unstyled cc-3">
+                                    <li><a class="dropdown-item" href="./docs/elements/accordion.html">Accordion</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/alerts.html">Alerts</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/animations.html">Animations</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/avatars.html">Avatars</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/background.html">Background</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/badges.html">Badges</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/breadcrumb.html">Breadcrumb</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/buttons.html">Buttons</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/card.html">Card</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/carousel.html">Carousel</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/dividers.html">Dividers</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/form-elements.html">Form Elements</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/image-hover.html">Image Hover</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/image-mask.html">Image Mask</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/lightbox.html">Lightbox</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/player.html">Media Player</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/modal.html">Modal</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/progressbar.html">Progressbar</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/shadows.html">Shadows</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/shapes.html">Shapes</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/tables.html">Tables</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/tabs.html">Tabs</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/text-animations.html">Text Animations</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/text-highlight.html">Text Highlight</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/tiles.html">Tiles</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/tooltips-popovers.html">Tooltips & Popovers</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/typography.html">Typography</a></li>
+                                  </ul>
+                                </div>
+                                <!--/column -->
+                              </div>
+                              <!--/.row -->
+                            </li>
+                            <!--/.mega-menu-content-->
+                          </ul>
+                          <!--/.dropdown-menu -->
+                        </li>
+
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="/teacher/" >اساتید</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">وبسایت ها</a>
+
+                      <ul class="dropdown-menu" >
+                        <div style="text-direction:rtl;direction:rtl" dir="auto">
+                          <li class="nav-item"><a class="dropdown-item" href="/publisher/">همه وبسایت ها</a></li>
+                          <li class="dropdown dropdown-submenu dropend"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown"> همکاری با ما</a>
+                            <ul class="dropdown-menu">
+                              <li class="nav-item"><a class="dropdown-item" href="/partnership/">میتروچیستا چگونه به شما کمک میکند؟</a></li>
+                              <li class="nav-item"><a class="dropdown-item" href="/partnership/">تعرفه ها و قیمت ها چگونه است؟</a></li>
+                              <li class="nav-item"><a class="dropdown-item" href="/partnership/">درخواست همکاری</a></li>
+                            </ul>
+                          </li>
+                          <li class="nav-item"><a class="dropdown-item" onclick="" href="" >ورود به پنل منتشر کننده ها</a></li>
+                        </div>
+                      </ul>
+                    </li>
+                    <li class="nav-item dropdown dropdown-mega">
+                      <a class="nav-link dropdown-toggle" href="/explore/">همه دوره ها</a>
+                    </li>
+
+                  </ul>
+                  <!-- /.navbar-nav -->
+                </div>
+                <!-- /.offcanvas-body -->
+              </div>
+              <!-- /.navbar-collapse -->
+              <div class="navbar-other w-100 d-flex ms-auto" dir="ltr">
+                <ul class="navbar-nav flex-row align-items-center ms-auto">
+                  <li class="nav-item">
+                    <nav class="nav social social-muted justify-content-end text-end">
+
+                      <a href="#"><i class="uil uil-twitter"></i></a>
+                      <a href="#"><i class="uil uil-telegram"></i></a>
+                      <a href="#"><i class="uil uil-linkedin"></i></a>
+                      <a href="#"><i class="uil uil-instagram"></i></a>
+                    </nav>
+                    <!-- /.social -->
+                  </li>
+                  <li class="nav-item d-lg-none">
+                    <button class="hamburger offcanvas-nav-btn"><span></span></button>
+                  </li>
+                </ul>
+                <!-- /.navbar-nav -->
+              </div>
+              <!-- /.navbar-other -->
+            </div>
+            <!-- /.navbar-collapse-wrapper -->
+          </div>
+          <!-- /.container -->
+        </nav>
+        <!-- /.navbar -->
+      </header>
+      <!-- /header -->
+
+
+    <section class="wrapper bg-light wrapper-border  bg-soft-primary">
+      <div class="container inner py-8">
+        <div class="row gx-lg-8 gx-xl-12 gy-4 gy-lg-0">
+          <div class="col-lg-8 align-self-center">
+            <div class="blog-filter filter" >
+              <ul>
+                {% if not teacher %}
+                  {% if order is 0 %}
+                    <li><a class="active" href="?near=true{% if search %}&search={{ search }}{% endif %}">مرتبط ترین</a></li>
+                  {% else %}
+                    <li><a href="?near=true{% if search %}&search={{ search }}{% endif %}">مرتبط ترین</a></li>
+                  {% endif %}
+                {% endif %}
+                {% if not teacher %}
+                  {% if order is 1 %}
+                    <li><a class="active" href="?free=true{% if search %}&search={{ search }}{% endif %}">رایگان</a></li>
+                  {% else %}
+                    <li><a  href="?free=true{% if search %}&search={{ search }}{% endif %}">رایگان</a></li>
+                  {% endif %}
+                {% endif %}
+                {% if order is 3 %}
+                  <li><a class="active" href="?mostscore=true{% if search %}&search={{ search }}{% endif %}">پرامتیاز ترین</a></li>
+                {% else %}
+                  <li><a href="?mostscore=true{% if search %}&search={{ search }}{% endif %}">پرامتیاز ترین</a></li>
+                {% endif %}
+                {% comment %} <li><a href="?most-view=true{% if search %}&search={{ search }}{% endif %}">پربازدید ترین</a></li> {% endcomment %}
+              </ul>
+            </div>
+            <!--/.filter -->
+          </div>
+          <!--/column -->
+          <aside class="col-lg-4 sidebar">
+            <form class="search-form">
+              <div class="form-floating mb-0" dir="auto">
+                <input id="search-form" type="text" dir="auto" name="search" value="{% if search %}{{ search }}{% endif %}" class="form-control" placeholder="Search">
+                <label for="search-form">Search</label>
+              </div>
+            </form>
+            <!-- /.search-form -->
+          </aside>
+          <!-- /column .sidebar -->
+        </div>
+        <!--/.row -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /section -->
+    <section class="wrapper bg-light">
+      <div class="container py-14 py-md-16">
+        <div class="row gx-lg-8 gx-xl-12">
+          <div class="col-lg-8">
+
+
+
+
+<section class="wrapper bg-light">
+
+		<!-- /.row -->
+		<div class="row gy-6">
+
+
+      {% for res in result %}
+
+        <div class="col-md-6 col-lg-12" dir="auto">
+          <a href="/course/{{ res.0.course }}/{{ res.0.course.id }}/" class="card shadow-lg lift h-100">
+            <div class="card-body p-5 d-flex flex-row">
+              <div>
+                <img class="avatar w-11 h-11 fs-20 me-4" src="{{ res.0.publisher.publisher.img.url }}">
+              </div>
+              <div>
+
+                <span style="margin-right:10px" class="badge bg-pale-blue text-blue rounded py-1 mb-2">{{ res.0.publisher }}</span>
+                <h4 style="margin-right:15px" class="mb-1">{{ res.0.course }}</h4>
+                {% if res.0.course.price is not 0 %}
+                  <p style="margin-right:15px" class="mb-0 text-body"> استاد: {{ res.0.master }}<br>تراز : {{ res.0.course.score }}<br> قیمت : {{ res.0.course.price }} </p>
+                {% else %}
+                <p style="margin-right:15px" class="mb-0 text-body"> استاد: {{ res.0.master }}<br>تراز : {{ res.0.course.score }}<br> قیمت : رایگان </p>
+                {% endif %}
+              </div>
+            </div>
+          </a>
+        </div>
+
+      {% endfor %}
+
+      {% for res in all_result %}
+
+        <div class="col-md-6 col-lg-12" dir="auto">
+          <a href="/course/{{ res.course }}/{{ res.course.id }}/" class="card shadow-lg lift h-100">
+            <div class="card-body p-5 d-flex flex-row">
+              <div>
+                <img class="avatar w-11 h-11 fs-20 me-4" src="{{ res.publisher.publisher.img.url }}">
+              </div>
+              <div>
+
+                <span style="margin-right:10px" class="badge bg-pale-blue text-blue rounded py-1 mb-2">{{ res.publisher }}</span>
+                <h4 style="margin-right:15px" class="mb-1">{{ res.course }}</h4>
+                {% if res.course.price is not 0 %}
+                  <p style="margin-right:15px" class="mb-0 text-body"> استاد: {{ res.master }}<br>تراز : {{ res.course.score }}<br> قیمت : {{ res.course.price }} </p>
+                {% else %}
+                <p style="margin-right:15px" class="mb-0 text-body"> استاد: {{ res.master }}<br>تراز : {{ res.course.score }}<br> قیمت : رایگان </p>
+                {% endif %}
+              </div>
+            </div>
+          </a>
+        </div>
+
+      {% endfor %}
+
+
+      {% for t in teacher %}
+
+        <div class="col-md-6 col-lg-12" dir="auto">
+          <a href="/teacher/{{ t.name }}" class="card shadow-lg lift h-100">
+            <div class="card-body p-5 d-flex flex-row">
+              <div>
+                <span class="avatar bg-green text-white w-11 h-11 fs-20 me-4">{{ t.name|make_list|slice:'1'|join:'' }}</span>
+              </div>
+              <div>
+
+                <h4 style="margin-right:15px" class="mb-1">{{ t.name }}</h4>
+                <p style="margin-right:15px" class="mb-0 text-body"> تراز : {{ t.score }}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      {% endfor %}
+
+      {% for p in pub %}
+
+        <div class="col-md-6 col-lg-12" dir="auto">
+          <a href="/publisher/{{ p.id }}" class="card shadow-lg lift h-100">
+            <div class="card-body p-5 d-flex flex-row">
+              <div>
+                <img class="avatar w-11 h-11 fs-20 me-4" src="{{ p.img.url }}">
+              </div>
+              <div>
+
+                <h4 style="margin-right:15px" class="mb-1">{{ p.name }}</h4>
+                <p style="margin-right:15px" class="mb-0 text-body"> {{ p.CreatedDate.year }}-{{ p.CreatedDate.month }}-{{ p.CreatedDate.day }}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      {% endfor %}
+
+	  </div>
+	<!-- /.container -->
+</section>
+
+<br><br>
+
+
+            <!-- /.blog -->
+            {% if result %}
+
+              <nav class="d-flex" aria-label="pagination">
+                <ul class="pagination">
+                  <li class="page-item ">
+                    {% if result.previous_page_number|add:"-1" is not 0  %}
+                      <a class="page-link" href="?page={{ result.previous_page_number|add:"-1" }}{% if search %}&search={{ search }}{% endif %}" aria-label="Previous">
+                        <span aria-hidden="true"><i class="uil uil-arrow-left"></i></span>
+                      </a>
+                    {% endif %}
+                  </li>
+                    {% if result.previous_page_number is not 0 %}
+                      <li class="page-item "><a class="page-link" href="?page={{ result.previous_page_number }}{% if search %}&search={{ search }}{% endif %}">{{ result.previous_page_number }}</a></li>
+                    {% endif %}
+
+                    {% if result.previous_page_number|add:"-1" is not 0 %}
+                      <li class="page-item active"><a class="page-link" href="?page={{ result.next_page_number|add:"-1" }}">{{ result.next_page_number|add:"-1" }}</a></li>
+                    {% endif %}
+                    {% if result.next_page_number is not 0 %}
+                      <li class="page-item"><a class="page-link" href="?page={{ result.next_page_number }}{% if search %}&search={{ search }}{% endif %}"> {{ result.next_page_number }}</a></li>
+                    {% endif %}
+                    {% if result.next_page_number|add:"1" is not 0 %}
+                    <li class="page-item">
+                      <a class="page-link" href="?page={{ result.next_page_number|add:1 }}{% if search %}&search={{ search }}{% endif %}" aria-label="Next">
+                        <span aria-hidden="true"><i class="uil uil-arrow-right"></i></span>
+                      </a>
+                    </li>
+                    {% endif %}
+
+                </ul>
+                <!-- /.pagination -->
+              </nav>
+            <!-- /nav -->
+
+            {% elif pub %}
+
+            <nav class="d-flex" aria-label="pagination">
+              <ul class="pagination">
+                <li class="page-item ">
+                  {% if pub.previous_page_number|add:"-1" is not 0 %}
+                    <a class="page-link" href="?page={{ pub.previous_page_number|add:"-1" }}" aria-label="Previous">
+                      <span aria-hidden="true"><i class="uil uil-arrow-left"></i></span>
+                    </a>
+                  {% endif %}
+                </li>
+                  {% if pub.previous_page_number is not 0  %}
+                    <li class="page-item "><a class="page-link" href="?page={{ pub.previous_page_number }}">{{ pub.previous_page_number }}</a></li>
+                  {% endif %}
+                  {% if pub.next_page_number|add:"-1" is not 0 %}
+                    <li class="page-item active"><a class="page-link" href="?page={{ pub.next_page_number|add:"-1" }}">{{ pub.next_page_number|add:"-1" }}</a></li>
+                  {% endif %}
+                  {% if pub.next_page_number is not 0 %}
+                    <li class="page-item"><a class="page-link" href="?page={{ pub.next_page_number }}"> {{ pub.next_page_number }}</a></li>
+                  {% endif %}
+                  {% if pub.next_page_number|add:"1" is not 0 %}
+                    <li class="page-item">
+                    <a class="page-link" href="?page={{ pub.next_page_number|add:1 }}" aria-label="Next">
+                      <span aria-hidden="true"><i class="uil uil-arrow-right"></i></span>
+                    </a>
+                  </li>
+                  {% endif %}
+              </ul>
+              <!-- /.pagination -->
+            </nav>
+          <!-- /nav -->
+            {% elif teacher %}
+
+              <nav class="d-flex" aria-label="pagination">
+                <ul class="pagination">
+                  <li class="page-item ">
+                    {% if teacher.previous_page_number|add:"-1" is not 0  %}
+                      <a class="page-link" href="?page={{ teacher.previous_page_number|add:"-1" }}{% if search %}&search={{ search }}{% endif %}" aria-label="Previous">
+                        <span aria-hidden="true"><i class="uil uil-arrow-left"></i></span>
+                      </a>
+                    {% endif %}
+                  </li>
+                    {% if teacher.previous_page_number is not 0 %}
+                      <li class="page-item "><a class="page-link" href="?page={{ teacher.previous_page_number }}{% if search %}&search={{ search }}{% endif %}">{{ teacher.previous_page_number }}</a></li>
+                    {% endif %}
+                    {% if teacher.next_page_number|add:"-1" is not 0 %}
+                      <li class="page-item active"><a class="page-link" href="?page={{ teacher.next_page_number|add:"-1" }}">{{ teacher.next_page_number|add:"-1" }}</a></li>
+                    {% endif %}
+                    {% if teacher.next_page_number is not 0 %}
+                      <li class="page-item"><a class="page-link" href="?page={{ teacher.next_page_number }}{% if search %}&search={{ search }}{% endif %}"> {{ teacher.next_page_number }}</a></li>
+                    {% endif %}
+                    {% if teacher.next_page_number|add:"1" is not 0 %}
+                    <li class="page-item">
+                      <a class="page-link" href="?page={{ teacher.next_page_number|add:1 }}{% if search %}&search={{ search }}{% endif %}" aria-label="Next">
+                        <span aria-hidden="true"><i class="uil uil-arrow-right"></i></span>
+                      </a>
+                    </li>
+                    {% endif %}
+
+                </ul>
+                <!-- /.pagination -->
+              </nav>
+            <!-- /nav -->
+
+            {% else %}
+
+            <nav class="d-flex" aria-label="pagination">
+              <ul class="pagination">
+                <li class="page-item ">
+                  {% if all_result.previous_page_number|add:"-1" is not 0  %}
+                    <a class="page-link" href="?page={{ all_result.previous_page_number|add:"-1" }}{% if search %}&search={{ search }}{% endif %}" aria-label="Previous">
+                      <span aria-hidden="true"><i class="uil uil-arrow-left"></i></span>
+                    </a>
+                  {% endif %}
+                </li>
+                  {% if all_result.previous_page_number is not 0 %}
+                    <li class="page-item "><a class="page-link" href="?page={{ all_result.previous_page_number }}{% if search %}&search={{ search }}{% endif %}">{{ all_result.previous_page_number }}</a></li>
+                  {% endif %}
+                  {% if all_result.next_page_number|add:"-1" is not 0 %}
+                    <li class="page-item active"><a class="page-link" href="?page={{ all_result.next_page_number|add:"-1" }}">{{ all_result.next_page_number|add:"-1" }}</a></li>
+                  {% endif %}
+                  {% if all_result.next_page_number is not 0 %}
+                    <li class="page-item"><a class="page-link" href="?page={{ all_result.next_page_number }}{% if search %}&search={{ search }}{% endif %}"> {{ all_result.next_page_number }}</a></li>
+                  {% endif %}
+                  {% if all_result.next_page_number|add:"1" is not 0 %}
+                  <li class="page-item">
+                    <a class="page-link" href="?page={{ all_result.next_page_number|add:1 }}{% if search %}&search={{ search }}{% endif %}" aria-label="Next">
+                      <span aria-hidden="true"><i class="uil uil-arrow-right"></i></span>
+                    </a>
+                  </li>
+                  {% endif %}
+
+              </ul>
+              <!-- /.pagination -->
+            </nav>
+          <!-- /nav -->
+            {% endif %}
+          </div>
+          <!-- /column -->
+          <aside class="col-lg-4 sidebar mt-8 mt-lg-6">
+            <div class="widget" dir="auto">
+              <h4 class="widget-title mb-3">درباره ما</h4>
+              <p>میتروچیستا بهت کمک میکنه تا در سریع ترین زمان ممکن دوره مد نظرت رو پیدا کنی و جایی رو درست میکنه تا بتونی با بقیه دانشجو های اون دوره ارتباط برقرار کنی </p>
+
+              <div class="clearfix"></div>
+            </div>
+            <!-- /.widget -->
+            <div class="widget" dir="auto">
+              <a href="#"><h4 class="widget-title mb-3">محبوب ترین دوره های هفته</h4></a>
+              <ul class="image-list">
+                <li>
+                  <div class="post-content">
+                    <h6 class="mb-2"> <a class="link-dark" href="./blog-post.html">دوره پایتون جادی</a> </h6>
+                    <ul class="post-meta">
+                      <li class="post-date"><i class="uil uil-calendar-alt"></i><span>26 Mar 2021</span></li>
+                      <li class="post-comments"><a href="#"><i class="uil uil-comment"></i>3</a></li>
+                    </ul>
+                    <!-- /.post-meta -->
+                  </div>
+                </li>
+                <li>
+                  <div class="post-content">
+                    <h6 class="mb-2"> <a class="link-dark" href="./blog-post.html">دوره جاوا اسکریپت</a> </h6>
+                    <ul class="post-meta">
+                      <li class="post-date"><i class="uil uil-calendar-alt"></i><span>16 Feb 2021</span></li>
+                      <li class="post-comments"><a href="#"><i class="uil uil-comment"></i>6</a></li>
+                    </ul>
+                    <!-- /.post-meta -->
+                  </div>
+                </li>
+                <li>
+                  <div class="post-content">
+                    <h6 class="mb-2"> <a class="link-dark" href="./blog-post.html">آموزش هوش مصنوعی با python</a> </h6>
+                    <ul class="post-meta">
+                      <li class="post-date"><i class="uil uil-calendar-alt"></i><span>8 Jan 2021</span></li>
+                      <li class="post-comments"><a href="#"><i class="uil uil-comment"></i>5</a></li>
+                    </ul>
+                    <!-- /.post-meta -->
+                  </div>
+                </li>
+              </ul>
+              <!-- /.image-list -->
+            </div>
+            <!-- /.widget -->
+            <div class="widget"  dir="auto">
+              <h4 class="widget-title mb-3">دسته بندی ها</h4>
+              <ul class="unordered-list bullet-primary text-reset">
+                <li><a href="#">پایتون (21)</a></li>
+                <li><a href="#">متلب (19)</a></li>
+                <li><a href="#">جاوا (16)</a></li>
+                <li><a href="#">php (7)</a></li>
+                <li><a href="#">css (12)</a></li>
+                <li><a href="#">ریاضی (14)</a></li>
+              </ul>
+            </div>
+
+            <!-- /.widget -->
+            <div class="widget" dir="auto">
+              <h4 class="widget-title mb-3">اساتید</h4>
+              <ul class="unordered-list bullet-primary text-reset">
+                <li><a href="#">جادی میرمیرانی</a></li>
+                <li><a href="#">فرشید شیرافکن</a></li>
+                <li><a href="#">آدم تستی </a></li>
+                <li><a href="#">مهدی رحمانی</a></li>
+                <li><a href="#">محمد فاطمی</a></li>
+              </ul>
+            </div>
+            <!-- /.widget -->
+          </aside>
+          <!-- /column .sidebar -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /section -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="bg-dark text-inverse">
+    <div class="container py-13 py-md-15">
+      <div class="row gy-6 gy-lg-0">
+        <div class="col-md-4 col-lg-3">
+          <div class="widget">
+            <img class="mb-4" src="{% static './assets/img/logo-light.png' %}" srcset="{% static './assets/img/logo-light@2x.png' %} 2x" alt="" />
+            <p class="mb-4">© 2021 Sandbox. <br class="d-none d-lg-block" />All rights reserved.</p>
+            <nav class="nav social social-white">
+              <a href="#"><i class="uil uil-twitter"></i></a>
+              <a href="#"><i class="uil uil-facebook-f"></i></a>
+              <a href="#"><i class="uil uil-dribbble"></i></a>
+              <a href="#"><i class="uil uil-instagram"></i></a>
+              <a href="#"><i class="uil uil-youtube"></i></a>
+            </nav>
+            <!-- /.social -->
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /column -->
+        <div class="col-md-4 col-lg-3">
+          <div class="widget">
+            <h4 class="widget-title text-white mb-3">Get in Touch</h4>
+            <address class="pe-xl-15 pe-xxl-17">Moonshine St. 14/05 Light City, London, United Kingdom</address>
+            <a href="mailto:#">info@email.com</a><br /> 00 (123) 456 78 90
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /column -->
+        <div class="col-md-4 col-lg-3">
+          <div class="widget">
+            <h4 class="widget-title text-white mb-3">Learn More</h4>
+            <ul class="list-unstyled  mb-0">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Our Story</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /column -->
+        <div class="col-md-12 col-lg-3">
+          <div class="widget">
+            <h4 class="widget-title text-white mb-3">Our Newsletter</h4>
+            <p class="mb-5">Subscribe to our newsletter to get our news & deals delivered to you.</p>
+            <div class="newsletter-wrapper">
+              <!-- Begin Mailchimp Signup Form -->
+              <div id="mc_embed_signup2">
+                <form action="https://elemisfreebies.us20.list-manage.com/subscribe/post?u=aa4947f70a475ce162057838d&amp;id=b49ef47a9a" method="post" id="mc-embedded-subscribe-form2" name="mc-embedded-subscribe-form" class="validate dark-fields" target="_blank" novalidate>
+                  <div id="mc_embed_signup_scroll2">
+                    <div class="mc-field-group input-group form-floating">
+                      <input type="email" value="" name="EMAIL" class="required email form-control" placeholder="Email Address" id="mce-EMAIL2">
+                      <label for="mce-EMAIL2">Email Address</label>
+                      <input type="submit" value="Join" name="subscribe" id="mc-embedded-subscribe2" class="btn btn-primary ">
+                    </div>
+                    <div id="mce-responses2" class="clear">
+                      <div class="response" id="mce-error-response2" style="display:none"></div>
+                      <div class="response" id="mce-success-response2" style="display:none"></div>
+                    </div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ddc180777a163e0f9f66ee014_4b1bcfa0bc" tabindex="-1" value=""></div>
+                    <div class="clear"></div>
+                  </div>
+                </form>
+              </div>
+              <!--End mc_embed_signup-->
+            </div>
+            <!-- /.newsletter-wrapper -->
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /column -->
+      </div>
+      <!--/.row -->
+    </div>
+    <!-- /.container -->
+  </footer>
+  <div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+  </div>
+  <script src="{% static './assets/js/plugins.js' %}"></script>
+  <script src="{% static './assets/js/theme.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+2022-06-20 19:44:00,428 - instabot version: 0.117.0 (bot) - INFO - Instabot version: 0.117.0 Started
+2022-06-20 19:44:00,429 - instabot version: 0.117.0 (bot) - DEBUG - Bot imported from /home/mahdi/.local/lib/python3.10/site-packages/instabot/bot/bot.py
+2022-06-20 19:44:00,431 - instabot version: 0.117.0 (api_login) - INFO - Not yet logged in starting: PRE-LOGIN FLOW!
+2022-06-20 19:44:01,458 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: accounts/get_prefill_candidates/ returned response: <Response [200]>
+2022-06-20 19:44:02,179 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: qe/sync/ returned response: <Response [200]>
+2022-06-20 19:44:02,854 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: launcher/sync/ returned response: <Response [200]>
+2022-06-20 19:44:03,522 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: accounts/contact_point_prefill/ returned response: <Response [200]>
+2022-06-20 19:44:05,119 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: accounts/login/ returned response: <Response [400]>
+2022-06-20 19:44:05,119 - instabot version: 0.117.0 (api) - DEBUG - Responsecode indicates error; response content: b'{"message":"Please wait a few minutes before you try again.","status":"fail","error_type":"rate_limit_error"}'
+2022-06-20 19:44:05,119 - instabot version: 0.117.0 (api) - ERROR - Request returns 400 error!
+2022-06-20 19:44:05,119 - instabot version: 0.117.0 (api) - INFO - Instagram's error message: Please wait a few minutes before you try again.
+2022-06-20 19:44:05,120 - instabot version: 0.117.0 (api) - INFO - Error type: rate_limit_error
+2022-06-20 19:44:05,120 - instabot version: 0.117.0 (api) - ERROR - Failed to login go to instagram and change your password
+2022-06-20 19:44:05,120 - instabot version: 0.117.0 (api) - INFO - Username or password is incorrect.

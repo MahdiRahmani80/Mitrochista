@@ -1,0 +1,14 @@
+2022-06-20 20:33:45,109 - instabot version: 0.117.0 (bot) - INFO - Instabot version: 0.117.0 Started
+2022-06-20 20:33:45,110 - instabot version: 0.117.0 (bot) - DEBUG - Bot imported from /home/mahdi/.local/lib/python3.10/site-packages/instabot/bot/bot.py
+2022-06-20 20:33:45,112 - instabot version: 0.117.0 (api_login) - INFO - Not yet logged in starting: PRE-LOGIN FLOW!
+2022-06-20 20:41:18,296 - instabot version: 0.117.0 (api) - WARNING - ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+2022-06-20 20:41:19,009 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: qe/sync/ returned response: <Response [200]>
+2022-06-20 20:41:20,573 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: launcher/sync/ returned response: <Response [200]>
+2022-06-20 20:41:21,280 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: accounts/contact_point_prefill/ returned response: <Response [429]>
+2022-06-20 20:41:21,281 - instabot version: 0.117.0 (api) - DEBUG - Responsecode indicates error; response content: b'{"message":"Please wait a few minutes before you try again.","status":"fail"}'
+2022-06-20 20:41:21,281 - instabot version: 0.117.0 (api) - ERROR - Request returns 429 error!
+2022-06-20 20:41:21,281 - instabot version: 0.117.0 (api) - WARNING - That means 'too many requests'. I'll go to sleep for 5 minutes.
+2022-06-20 20:46:22,139 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: accounts/contact_point_prefill/ returned response: <Response [429]>
+2022-06-20 20:46:22,139 - instabot version: 0.117.0 (api) - DEBUG - Responsecode indicates error; response content: b'{"message":"Please wait a few minutes before you try again.","status":"fail"}'
+2022-06-20 20:46:22,140 - instabot version: 0.117.0 (api) - ERROR - Request returns 429 error!
+2022-06-20 20:46:22,140 - instabot version: 0.117.0 (api) - WARNING - That means 'too many requests'. I'll go to sleep for 10 minutes.

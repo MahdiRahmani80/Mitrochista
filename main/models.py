@@ -1,3 +1,4 @@
+from distutils.command import upload
 from pickle import TRUE
 from django.db import models
 import uuid
@@ -35,10 +36,8 @@ class SocalMedia(models.Model):
 class User (models.Model):
     id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
     name = models.CharField(max_length=100)
-    phone = models.CharField(max_length=20,blank=True,null=True)
+    phone = models.CharField(max_length=20,unique=True)
     email = models.EmailField(blank=True,null=True)
-    phone = models.CharField(max_length=25,blank=True,null=True)
-    ip = models.CharField(max_length=200)
     score = models.IntegerField(default=0)
     isVerified = models.BooleanField(default=False)
     bio = models.CharField(max_length=300,default="Searcher")
@@ -59,15 +58,23 @@ class Publisher (models.Model):
     id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
     url = models.URLField()
     name= models.CharField(max_length=200,null=True,blank=True)
-    img = models.ImageField()
+    connectionWay =  models.CharField(max_length=600,help_text="email or phone")
+    img = models.ImageField(upload_to="Publisher/Image")
     SEORank = models.BigIntegerField(default=0)
     LastIndexed = models.DateTimeField()
-    CreatedDate = models.DateTimeField()
+    CreatedDate = models.DateTimeField(auto_now_add=True)
     isScrapAlgorithmWrite = models.BooleanField("Is Published",default=False)
     indexCoder = models.CharField(max_length=200)
 
     def __str__(self):
         return self.name
+
+    def save(self,*args,**kwargs):
+        if self.isScrapAlgorithmWrite:
+            Publish.objects.filter(publisher__id=self.id).update(is_visible=True)
+
+        super(Publisher,self).save(*args,**kwargs)
+
 
 
 class PublisherSocalMedia (models.Model):
@@ -80,7 +87,7 @@ class PublisherSocalMedia (models.Model):
 class Publish (models.Model):
     id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
     publisher = models.ForeignKey(Publisher,on_delete=models.CASCADE)
-    course = models.ForeignKey(Course,on_delete=models.CASCADE,unique=True)
+    course = models.ForeignKey(Course,on_delete=models.CASCADE)
     is_visible = models.BooleanField()
 
 
@@ -115,10 +122,11 @@ class TeacherSocalMedia(models.Model):
 
 class CourseTAG (models.Model):
     id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
-    course = models.ForeignKey(Course, on_delete=models.CASCADE,unique=True)
-    publisher = models.ForeignKey(Publisher,on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    publisher = models.ForeignKey(Publish,on_delete=models.CASCADE)
     tag = models.ManyToManyField(TAG,related_name='course_tag_rel')
     rank = models.JSONField()
+    master = models.CharField(max_length=300)
 
     def __str__(self):
         return str(self.course)
@@ -127,7 +135,7 @@ class CourseTAG (models.Model):
 class TeacherMakeCourse (models.Model):
     id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
     teacher = models.ForeignKey(Teacher,on_delete=models.CASCADE)
-    Course = models.ForeignKey(Course,on_delete=models.CASCADE,unique=True)
+    Course = models.ForeignKey(Course,on_delete=models.CASCADE)
     date = models.DateTimeField(default=datetime.now())
 
     def __str__(self):
@@ -219,9 +227,10 @@ class Pay (models.Model):
 class ClickCourse (models.Model):
     id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
     course = models.ForeignKey(Course,on_delete=models.CASCADE)
+    publisher = models.ForeignKey(Publisher,on_delete=models.CASCADE)
     user = models.ForeignKey(User,on_delete=models.CASCADE,blank=True,null=True)
     ip = models.CharField(max_length=20)
-    date = models.DateTimeField(default=datetime.now())
+    date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return str(self.course)

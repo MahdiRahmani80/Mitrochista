@@ -1,0 +1,253 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An impressive and flawless site template that includes various UI elements and countless features, attractive ready-made blocks and rich pages, basically everything you need to create a unique and professional website.">
+  <meta name="keywords" content="bootstrap 5, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template">
+  <meta name="author" content="elemis">
+  <title>Mitrochista - Course Search Engine Platform</title>
+  <link rel="shortcut icon" href="{% static './img/Mitrochista.png' %}">
+  <link rel="stylesheet" href="{% static './assets/css/plugins.css' %}">
+  <link rel="stylesheet" href="{% static './assets/css/style.css' %}">
+  <link rel="stylesheet" href="{% static './assets/css/colors/purple.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
+</head>
+
+<body style="font-family:'Open Sans'">
+  <div class="content-wrapper">
+
+    <section class="wrapper bg-light wrapper-border  bg-soft-primary" dir="auto">
+      <div class="container inner py-8">
+        <div class="col-lg-8 align-self-center">
+          <div class="blog-filter filter" >
+
+          </div>
+          <!--/.filter -->
+        </div>
+        <!--/column -->
+
+        <aside class="col-lg-4 sidebar">
+
+          <p id="submit" href="#" type="submit" dir="auto" data-bs-target="#modal-pricing" data-bs-toggle="modal" data-bs-dismiss="modal"  class="btn btn-primary">افزایش شارژ حساب</p>
+
+          <!-- /.search-form -->
+        </aside>
+        <br>
+        <h4>میزان اعتبار حساب شما : "{{ credit.monney }} تومان" است<h4>
+        <h6> میزان ترافیکی که از سایت ما به سایت شما راه یافتند :‌"{{ len_click }} بازدید"<h6>
+
+        {% if publisher.isScrapAlgorithmWrite %}
+          <h6>دوره های شما قابل رویت هستند<h6>
+        {% else%}
+          <h5 style="color:red">دوره های شما قابل رویت نیست ، حسابتان را شارژ کنید<h5>
+        {% endif %}
+
+          <!-- /column .sidebar -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /section -->
+
+
+
+
+<section class="wrapper bg-light" style="margin-right:12%;margin-left:12%;margin-top:4%;margin-bottom:4%;">
+
+      <h3 dir="auto">جزییات هر بازدید :</h3>
+      </br>
+
+
+    {% for res in all_result %}
+
+      <a href="/course/{{ res.course }}/{{ res.course.id }}/" target="_blank" class="card mb-3 lift" dir="auto">
+        <div class="card-body p-5">
+          <span class="row justify-content-between align-items-center">
+            <span class="col-md-5 mb-2 mb-md-0 d-flex align-items-center text-body">
+              <span style="margin-left:15px" class="avatar bg-green text-white w-9 h-9 fs-17 me-3">{{ res.course|make_list|slice:":2"|join:"" }}</span> {{ res.course|make_list|slice:":30"|join:"" }} ... </span>
+            <span class="col-5 col-md-3 text-body d-flex align-items-center">
+              <i class="uil uil-clock me-1"></i> {{ res.date }} </span>
+            <span class="col-7 col-md-4 col-lg-3 text-body d-flex align-items-center">
+              <i class="uil uil-location-pin-alt me-1"></i>&nbsp; {{ res.ip }} </span>
+            <span class="d-none d-lg-block col-1 text-center text-body">
+              <i class="uil uil-angle-left-b"></i>
+            </span>
+          </span>
+        </div>
+        <!-- /.card-body -->
+      </a>
+      {% endfor %}
+
+
+
+      {% comment %} pagination {% endcomment %}
+
+
+            <nav class="d-flex" aria-label="pagination">
+              <ul class="pagination">
+                <li class="page-item ">
+                  {% if all_result.previous_page_number|add:"-1" is not 0  %}
+                    <a class="page-link" href="?page={{ all_result.previous_page_number|add:"-1" }}{% if search %}&search={{ search }}{% endif %}" aria-label="Previous">
+                      <span aria-hidden="true"><i class="uil uil-arrow-left"></i></span>
+                    </a>
+                  {% endif %}
+                </li>
+                  {% if all_result.previous_page_number is not 0 %}
+                    <li class="page-item "><a class="page-link" href="?page={{ all_result.previous_page_number }}{% if search %}&search={{ search }}{% endif %}">{{ all_result.previous_page_number }}</a></li>
+                  {% endif %}
+                  {% if all_result.next_page_number|add:"-1" is not 0 %}
+                    <li class="page-item active"><a class="page-link" href="?page={{ all_result.next_page_number|add:"-1" }}">{{ all_result.next_page_number|add:"-1" }}</a></li>
+                  {% endif %}
+                  {% if all_result.next_page_number is not 0 %}
+                    <li class="page-item"><a class="page-link" href="?page={{ all_result.next_page_number }}{% if search %}&search={{ search }}{% endif %}"> {{ all_result.next_page_number }}</a></li>
+                  {% endif %}
+                  {% if all_result.next_page_number|add:"1" is not 0 %}
+                  <li class="page-item">
+                    <a class="page-link" href="?page={{ all_result.next_page_number|add:1 }}{% if search %}&search={{ search }}{% endif %}" aria-label="Next">
+                      <span aria-hidden="true"><i class="uil uil-arrow-right"></i></span>
+                    </a>
+                  </li>
+                  {% endif %}
+
+              </ul>
+              <!-- /.pagination -->
+            </nav>
+          <!-- /nav -->
+          </div>
+          <!-- /column -->
+
+        </div>
+
+
+
+
+
+      <!-- /.container -->
+    </section>
+    <!-- /section -->
+  </div>
+
+
+
+
+  <!-- /.content-wrapper -->
+  <footer class="bg-dark text-inverse">
+    <div class="container py-13 py-md-15">
+      <div class="row gy-6 gy-lg-0">
+        <div class="col-md-4 col-lg-3">
+          <div class="widget">
+            <img class="mb-4" src="{% static './assets/img/logo-light.png' %}" srcset="{% static './assets/img/logo-light@2x.png' %} 2x" alt="" />
+            <p class="mb-4">© 2021 Sandbox. <br class="d-none d-lg-block" />All rights reserved.</p>
+            <nav class="nav social social-white">
+              <a href="#"><i class="uil uil-twitter"></i></a>
+              <a href="#"><i class="uil uil-facebook-f"></i></a>
+              <a href="#"><i class="uil uil-dribbble"></i></a>
+              <a href="#"><i class="uil uil-instagram"></i></a>
+              <a href="#"><i class="uil uil-youtube"></i></a>
+            </nav>
+            <!-- /.social -->
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /column -->
+        <div class="col-md-4 col-lg-3">
+          <div class="widget">
+            <h4 class="widget-title text-white mb-3">Get in Touch</h4>
+            <address class="pe-xl-15 pe-xxl-17">Moonshine St. 14/05 Light City, London, United Kingdom</address>
+            <a href="mailto:#">info@email.com</a><br /> 00 (123) 456 78 90
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /column -->
+        <div class="col-md-4 col-lg-3">
+          <div class="widget">
+            <h4 class="widget-title text-white mb-3">Learn More</h4>
+            <ul class="list-unstyled  mb-0">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Our Story</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /column -->
+        <div class="col-md-12 col-lg-3">
+          <div class="widget">
+            <h4 class="widget-title text-white mb-3">Our Newsletter</h4>
+            <p class="mb-5">Subscribe to our newsletter to get our news & deals delivered to you.</p>
+            <div class="newsletter-wrapper">
+              <!-- Begin Mailchimp Signup Form -->
+              <div id="mc_embed_signup2">
+                <form action="https://elemisfreebies.us20.list-manage.com/subscribe/post?u=aa4947f70a475ce162057838d&amp;id=b49ef47a9a" method="post" id="mc-embedded-subscribe-form2" name="mc-embedded-subscribe-form" class="validate dark-fields" target="_blank" novalidate>
+                  <div id="mc_embed_signup_scroll2">
+                    <div class="mc-field-group input-group form-floating">
+                      <input type="email" value="" name="EMAIL" class="required email form-control" placeholder="Email Address" id="mce-EMAIL2">
+                      <label for="mce-EMAIL2">Email Address</label>
+                      <input type="submit" value="Join" name="subscribe" id="mc-embedded-subscribe2" class="btn btn-primary ">
+                    </div>
+                    <div id="mce-responses2" class="clear">
+                      <div class="response" id="mce-error-response2" style="display:none"></div>
+                      <div class="response" id="mce-success-response2" style="display:none"></div>
+                    </div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ddc180777a163e0f9f66ee014_4b1bcfa0bc" tabindex="-1" value=""></div>
+                    <div class="clear"></div>
+                  </div>
+                </form>
+              </div>
+              <!--End mc_embed_signup-->
+            </div>
+            <!-- /.newsletter-wrapper -->
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /column -->
+      </div>
+      <!--/.row -->
+    </div>
+    <!-- /.container -->
+  </footer>
+
+
+  <div class="modal fade" id="modal-pricing" tabindex="-1" >
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content text-center">
+        <div class="modal-body">
+          <button type="button" class="btn-close"  data-bs-dismiss="modal" aria-label="Close"></button>
+          {% comment %} <h2 class="mb-3 text-end" >به راحتی اعتبار حساب خود را افزایش دهید</h2> {% endcomment %}
+          <p style="font-size:14px" class="lead mb-6 text-end">(ریال)مبلغی که تمایل دارید حسابتان شارژ شود را وارد کنید</p>
+
+            <form method="post">
+              <div class="form-floating mb-4">
+                <input type="text" class="form-control" name="chargePrice" placeholder="مبلغ" id="chargePrice">
+                <label for="phoneEmail">مبلغ</label>
+              </div>
+              {% csrf_token %}
+              <button onclick="chargeAccount()" class="btn btn-primary rounded-pill btn-login w-100 mb-2">پرداخت</button>
+          </form>
+        </div>
+        <!--/.modal-content -->
+      </div>
+      <!--/.modal-body -->
+    </div>
+    <!--/.modal-dialog -->
+  </div>
+  <!--/.modal -->
+
+
+
+  <div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+  </div>
+  <script src="{% static './assets/js/plugins.js' %}"></script>
+  <script src="{% static './assets/js/theme.js' %}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+2022-06-20 20:34:00,006 - instabot version: 0.117.0 (bot) - INFO - Instabot version: 0.117.0 Started
+2022-06-20 20:34:00,006 - instabot version: 0.117.0 (bot) - DEBUG - Bot imported from /home/mahdi/.local/lib/python3.10/site-packages/instabot/bot/bot.py
+2022-06-20 20:34:00,008 - instabot version: 0.117.0 (api_login) - INFO - Not yet logged in starting: PRE-LOGIN FLOW!
+2022-06-20 20:36:33,957 - instabot version: 0.117.0 (api) - WARNING - HTTPSConnectionPool(host='i.instagram.com', port=443): Max retries exceeded with url: /api/v1/accounts/get_prefill_candidates/ (Caused by SSLError(SSLError(1, '[SSL] unknown error (_ssl.c:997)')))
+2022-06-20 20:36:34,701 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: qe/sync/ returned response: <Response [200]>
+2022-06-20 20:42:27,926 - instabot version: 0.117.0 (api) - WARNING - ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))

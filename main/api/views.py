@@ -51,6 +51,11 @@ class AddCourseTag(generics.CreateAPIView):
     serializer_class = serializers.CourseTag
     permission_classes = [IsAdminUser]
 
+class UpdateCourseTag (generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.CourseTAG.objects.all()
+    serializer_class = serializers.CourseTag
+    permission_classes = [IsAdminUser]
+    lookup_field="id"
 
 class AddCourseTeacher(generics.CreateAPIView):
     queryset = models.TeacherMakeCourse.objects.all()
@@ -79,4 +84,9 @@ class UpdatePublisher(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.Publisher.objects.all()
     serializer_class = serializers.Publisher
     lookup_field = 'id'
+    permission_classes = [IsAdminUser]
+
+class CreateUser(generics.CreateAPIView):
+    queryset = models.User.objects.all()
+    serializer_class = serializers.UserSerializer
     permission_classes = [IsAdminUser]

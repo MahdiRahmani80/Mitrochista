@@ -1,0 +1,816 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An impressive and flawless site template that includes various UI elements and countless features, attractive ready-made blocks and rich pages, basically everything you need to create a unique and professional website.">
+  <meta name="keywords" content="bootstrap 5, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template">
+  <meta name="author" content="elemis">
+  <title>Mitrochista - {{ res.course.title }}</title>
+  <link rel="shortcut icon" href="{% static './img/Mitrochista.png' %}">
+  <link rel="stylesheet" href="{% static './assets/css/plugins.css' %}">
+  <link rel="stylesheet" href="{% static './assets/css/style.css' %}">
+  <link rel="stylesheet" href="{% static './assets/css/colors/purple.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
+</head>
+
+<body style="font-family:'Open Sans'">
+  <div class="content-wrapper">
+
+    <header class="wrapper">
+        <nav class="navbar navbar-expand-lg fancy navbar-light navbar-bg-light caret-none ">
+          <div class="container">
+            <div class="shadow-lg  navbar-collapse-wrapper bg-white d-flex flex-row flex-nowrap w-100 justify-content-between align-items-center">
+              <div class="navbar-brand w-100">
+                <a href="./index.html">
+                  <img src="{% static './img/Mitrochista.png' %}" style="widget:60dp;height:60px" srcset="{% static './img/Mitrochista.png' %} 2x" alt="" />
+                </a>
+              </div>
+              <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start" dir="ltr">
+                <div class="offcanvas-header d-lg-none d-xl-none">
+                  <a href="/"><img src="{% static './img/Mitrochista.png' %}" srcset="{% static './img/Mitrochista.png' %} 2x" alt="" /></a>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+                  <ul class="navbar-nav">
+
+                      <li class="nav-item dropdown dropdown-mega">
+                        <a class="nav-link dropdown-toggle" href="#">تماس با ما</a>
+                      </li>
+
+                      <li class="nav-item dropdown dropdown-mega">
+                          <a class="nav-link dropdown-toggle" href="#">درباره ما</a>
+                      </li>
+
+                      <li class="nav-item dropdown dropdown-mega">
+                          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">دسته بندی ها</a>
+                          <ul class="dropdown-menu mega-menu">
+                            <li class="mega-menu-content">
+                              <div class="row gx-0 gx-lg-3">
+                                <div class="col-lg-4">
+                                  <h6 class="dropdown-header">Usage</h6>
+                                  <ul class="list-unstyled cc-2 pb-lg-1">
+                                    <li><a class="dropdown-item" href="./docs/index.html">Get Started</a></li>
+                                    <li><a class="dropdown-item" href="./docs/forms.html">Forms</a></li>
+                                    <li><a class="dropdown-item" href="./docs/faq.html">FAQ</a></li>
+                                    <li><a class="dropdown-item" href="./docs/changelog.html">Changelog</a></li>
+                                    <li><a class="dropdown-item" href="./docs/credits.html">Credits</a></li>
+                                  </ul>
+                                  <h6 class="dropdown-header mt-lg-6">Styleguide</h6>
+                                  <ul class="list-unstyled cc-2">
+                                    <li><a class="dropdown-item" href="./docs/styleguide/colors.html">Colors</a></li>
+                                    <li><a class="dropdown-item" href="./docs/styleguide/fonts.html">Fonts</a></li>
+                                    <li><a class="dropdown-item" href="./docs/styleguide/icons-svg.html">SVG Icons</a></li>
+                                    <li><a class="dropdown-item" href="./docs/styleguide/icons-font.html">Font Icons</a></li>
+                                    <li><a class="dropdown-item" href="./docs/styleguide/illustrations.html">Illustrations</a></li>
+                                    <li><a class="dropdown-item" href="./docs/styleguide/backgrounds.html">Backgrounds</a></li>
+                                    <li><a class="dropdown-item" href="./docs/styleguide/misc.html">Misc</a></li>
+                                  </ul>
+                                </div>
+                                <!--/column -->
+                                <div class="col-lg-8">
+                                  <h6 class="dropdown-header">Elements</h6>
+                                  <ul class="list-unstyled cc-3">
+                                    <li><a class="dropdown-item" href="./docs/elements/accordion.html">Accordion</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/alerts.html">Alerts</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/animations.html">Animations</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/avatars.html">Avatars</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/background.html">Background</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/badges.html">Badges</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/breadcrumb.html">Breadcrumb</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/buttons.html">Buttons</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/card.html">Card</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/carousel.html">Carousel</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/dividers.html">Dividers</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/form-elements.html">Form Elements</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/image-hover.html">Image Hover</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/image-mask.html">Image Mask</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/lightbox.html">Lightbox</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/player.html">Media Player</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/modal.html">Modal</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/progressbar.html">Progressbar</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/shadows.html">Shadows</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/shapes.html">Shapes</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/tables.html">Tables</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/tabs.html">Tabs</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/text-animations.html">Text Animations</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/text-highlight.html">Text Highlight</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/tiles.html">Tiles</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/tooltips-popovers.html">Tooltips & Popovers</a></li>
+                                    <li><a class="dropdown-item" href="./docs/elements/typography.html">Typography</a></li>
+                                  </ul>
+                                </div>
+                                <!--/column -->
+                              </div>
+                              <!--/.row -->
+                            </li>
+                            <!--/.mega-menu-content-->
+                          </ul>
+                          <!--/.dropdown-menu -->
+                        </li>
+
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="/teacher/" >اساتید</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">وبسایت ها</a>
+
+                      <ul class="dropdown-menu" >
+                        <div style="text-direction:rtl;direction:rtl" dir="auto">
+                          <li class="nav-item"><a class="dropdown-item" href="/publisher/">همه وبسایت ها</a></li>
+                          <li class="dropdown dropdown-submenu dropend"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown"> همکاری با ما</a>
+                            <ul class="dropdown-menu">
+                              <li class="nav-item"><a class="dropdown-item" href="/partnership/">میتروچیستا چگونه به شما کمک میکند؟</a></li>
+                              <li class="nav-item"><a class="dropdown-item" href="/partnership/">تعرفه ها و قیمت ها چگونه است؟</a></li>
+                              <li class="nav-item"><a class="dropdown-item" href="/partnership/">درخواست همکاری</a></li>
+                            </ul>
+                          </li>
+                          <li class="nav-item"><a class="dropdown-item" onclick="" href="" >ورود به پنل منتشر کننده ها</a></li>
+                        </div>
+                      </ul>
+                    </li>
+                    <li class="nav-item dropdown dropdown-mega">
+                      <a class="nav-link dropdown-toggle" href="/explore/">همه دوره ها</a>
+                    </li>
+
+                  </ul>
+                  <!-- /.navbar-nav -->
+                </div>
+                <!-- /.offcanvas-body -->
+              </div>
+              <!-- /.navbar-collapse -->
+              <div class="navbar-other w-100 d-flex ms-auto" dir="ltr">
+                <ul class="navbar-nav flex-row align-items-center ms-auto">
+                  <li class="nav-item">
+                    <nav class="nav social social-muted justify-content-end text-end">
+
+                      <a href="#"><i class="uil uil-twitter"></i></a>
+                      <a href="#"><i class="uil uil-telegram"></i></a>
+                      <a href="#"><i class="uil uil-linkedin"></i></a>
+                      <a href="#"><i class="uil uil-instagram"></i></a>
+                    </nav>
+                    <!-- /.social -->
+                  </li>
+                  <li class="nav-item d-lg-none">
+                    <button class="hamburger offcanvas-nav-btn"><span></span></button>
+                  </li>
+                </ul>
+                <!-- /.navbar-nav -->
+              </div>
+              <!-- /.navbar-other -->
+            </div>
+            <!-- /.navbar-collapse-wrapper -->
+          </div>
+          <!-- /.container -->
+        </nav>
+        <!-- /.navbar -->
+      </header>
+      <!-- /header -->
+
+    <br><br><br><br><br><br>
+    <section class="wrapper bg-light" dir="auto">
+      <div class="container pb-14 pb-md-16">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <div class="blog single mt-n17">
+              <div class="card">
+                {% comment %} <figure class="card-img-top"><img src="{% static './assets/img/photos/b1.jpg' %}" alt="" /></figure> {% endcomment %}
+                <div class="card-body">
+                  <div class="classic-view">
+                    <article class="post">
+                      <div class="post-content mb-5">
+                        <h2 class="h1 mb-4">{{ res.course.title }}</h2>
+
+                        {% comment %} TODO : Corse some text <p> {% endcomment %}
+                          <p>
+                            این دوره توسط "<a href="/teacher/{{ res.master }}"><b>{{ res.master }}</b></a>" تدریس شده
+                          </p>
+
+                          <p>
+                            تراز این دوره آنلاین "<b>{{ res.course.score }}</b>" هست
+                          </p>
+
+                          {% if res.course.price is not 0  %}
+                          <p>
+                            قیمت این دوره "<b>{{ res.course.price }} تومان</b>"  هست
+                          </p>
+                          {% else %}
+                            <p>
+                               این دوره رایگان است
+                            </p>
+                          {% endif %}
+
+                          <p>
+                            سایت منتشر کننده : <a href="/publisher/{{ res.publisher.publisher.id }}">{{ res.publisher }}</a>
+                          </p>
+
+                          <p>
+                            تعداد دانشجویان این دوره "<b>{{ res.course.students }} نفر</b>" است
+                          </p>
+                          <p>
+                            مدت زمان این دوره "<b>{{ res.course.time }} دقیقه</b>" میباشد
+                          </p>
+                      </div>
+                      <form id="click_form" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="click" value="True">
+                        <a onclick="document.getElementById('click_form').submit()"  href="{{ res.course.url }}" target="_blank" style="margin:6%" class=" d-md-flex flex-md-row btn btn-gradient gradient-6 rounded-pill">ورود به دوره</a>
+                      </form>
+                      <!-- /.post-content -->
+                      <div class="post-footer d-md-flex flex-md-row justify-content-md-between align-items-center mt-8">
+                        <div>
+                          <ul class="list-unstyled tag-list mb-0">
+                            {% for tag in tag_list|slice:':25' %}
+                                <li><a href="/tag/{{ tag.name }}" style="font-size:14px" class="btn btn-soft-ash btn-sm rounded-pill ">{{ tag }}</a></li>
+                            {% endfor %}
+                          </ul>
+                        </div>
+                        <div class="mb-0 mb-md-2">
+
+                          <div class="dropdown share-dropdown btn-group">
+                            <button style="margin-right:35px" class="btn btn-sm btn-red rounded-pill btn-icon btn-icon-start dropdown-toggle mb-0 me-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="uil uil-share-alt"></i> &nbsp;به اشتراک بگذارید </button>
+                            <div class="dropdown-menu" dir="ltr">
+                              <a class="dropdown-item" href="https://twitter.com/compose/tweet" target="_blank" ><i class="uil uil-twitter"></i>&nbsp;توییتر</a>
+                              <a class="dropdown-item" href="https://www.instagram.com/" target="_blank" ><i class="uil uil-instagram"></i>&nbsp;اینستاگرام</a>
+                              <a class="dropdown-item" href="https://www.linkedin.com/" target="_blank"><i class="uil uil-linkedin"></i>&nbsp;لینکدین </a>
+                            </div>
+                            <!--/.dropdown-menu -->
+                          </div>
+                          <!--/.share-dropdown -->
+                        </div>
+                      </div>
+                      <!-- /.post-footer -->
+                    </article>
+                    <!-- /.post -->
+                  </div>
+                  <!-- /.classic-view -->
+
+                  <hr>
+                  <div id="comments">
+                    <h3 class="mb-6">چطوری همکلاسی ؟!</h3>
+                    <p style="margin-right:20px">توی این قسمت میتونید با همکلاسی های این دوره حرف بزنید، درباره بازار کار و کلی چیز دیگه :)</p>
+                    <br>
+                    {% for comm in comment %}
+                    <ol id="singlecomments" class="commentlist" dir="auto">
+                      <li class="comment" >
+
+                        <div class="comment-header d-md-flex align-items-center" dir="auto" >
+                          <div class="d-flex align-items-center">
+                            <figure style="margin-right:15px" class="user-avatar"><span class="avatar bg-green text-white w-10 h-10 fs-20 me-2" >{{ comm.user.name|make_list|slice:'1'|join:'' }}</span></figure>
+                            <div >
+                              <h6 class="comment-author text-center"><a href="#" class="link-dark">{{ comm.user.name }}</a></h6>
+                              <ul class="post-meta" >
+                                <li><i class="uil uil-calendar-alt"></i>{{ comm.comment.date.year }}-{{ comm.comment.date.month }}-{{ comm.comment.date.day }}</li>
+                              </ul>
+                              <!-- /.post-meta -->
+                            </div>
+                            <!-- /div -->
+                          </div>
+                          <!-- /div -->
+
+                        </div>
+                        <!-- /.comment-header -->
+                        <p style="margin-right:10%;margin-left:10%;margin-bottom:7%;margin-top:1%;" >{{ comm.comment.comment|safe }}</p>
+                      </li>
+                    </ol>
+                    {% endfor %}
+                  </div>
+                  <!-- /#comments -->
+                  <hr />
+                  <h3 class="mb-3">نوشتن، فریاد یک عقیده است!</h3>
+                  <p class="mb-7">به انجمن ما بپیوندید و دوست پیدا کنید ...</p>
+
+                  <form id="form_comment" method="post" class="comment-form">
+                    <div class="form-floating mb-4">
+                      <textarea id="comment_text" name="comment" dir="auto" class="form-control" placeholder="Comment" style="height: 150px"></textarea>
+                      {% csrf_token %}
+                      <label>Comment *</label>
+                    </div>
+                    <button id="btn_sub_comment" onclick="postComment()" style="display:none" type="button" class="btn btn-primary  rounded-pill mb-0">ارسال</button>
+                    <a  id="btn_signup" data-bs-target="#modal-signup" data-bs-toggle="modal" class="btn btn-gradient gradient-1 rounded-pill">ایجاد حساب کاربری</a>
+                    <a href="#" id="btn_signin" style="margin-right:15px" data-bs-toggle="modal" data-bs-target="#modal-signin" class="btn btn-outline-gradient gradient-1 rounded-pill">ورود</a>
+
+                  </form>
+                  <!-- /.comment-form -->
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+            <!-- /.blog -->
+          </div>
+          <!-- /column -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </section>
+    <!-- /section -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="bg-dark text-inverse">
+    <div class="container py-13 py-md-15">
+      <div class="row gy-6 gy-lg-0">
+        <div class="col-md-4 col-lg-3">
+          <div class="widget">
+            {% comment %} <img class="mb-4" src="./assets/img/logo-light.png" srcset="./assets/img/logo-light@2x.png 2x" alt="" /> {% endcomment %}
+            <p class="mb-4">© 2021 Sandbox. <br class="d-none d-lg-block" />All rights reserved.</p>
+            <nav class="nav social social-white">
+              <a href="#"><i class="uil uil-twitter"></i></a>
+              <a href="#"><i class="uil uil-facebook-f"></i></a>
+              <a href="#"><i class="uil uil-dribbble"></i></a>
+              <a href="#"><i class="uil uil-instagram"></i></a>
+              <a href="#"><i class="uil uil-youtube"></i></a>
+            </nav>
+            <!-- /.social -->
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /column -->
+        <div class="col-md-4 col-lg-3">
+          <div class="widget">
+            <h4 class="widget-title text-white mb-3">Get in Touch</h4>
+            <address class="pe-xl-15 pe-xxl-17">Moonshine St. 14/05 Light City, London, United Kingdom</address>
+            <a href="mailto:#">info@email.com</a><br /> 00 (123) 456 78 90
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /column -->
+        <div class="col-md-4 col-lg-3">
+          <div class="widget">
+            <h4 class="widget-title text-white mb-3">Learn More</h4>
+            <ul class="list-unstyled  mb-0">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Our Story</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /column -->
+        <div class="col-md-12 col-lg-3">
+          <div class="widget">
+            <h4 class="widget-title text-white mb-3">Our Newsletter</h4>
+            <p class="mb-5">Subscribe to our newsletter to get our news & deals delivered to you.</p>
+            <div class="newsletter-wrapper">
+              <!-- Begin Mailchimp Signup Form -->
+              <div id="mc_embed_signup2">
+                <form action="https://elemisfreebies.us20.list-manage.com/subscribe/post?u=aa4947f70a475ce162057838d&amp;id=b49ef47a9a" method="post" id="mc-embedded-subscribe-form2" name="mc-embedded-subscribe-form" class="validate dark-fields" target="_blank" novalidate>
+                  <div id="mc_embed_signup_scroll2">
+                    <div class="mc-field-group input-group form-floating">
+                      <input type="email" value="" name="EMAIL" class="required email form-control" placeholder="Email Address" id="mce-EMAIL2">
+                      <label for="mce-EMAIL2">Email Address</label>
+                      <input type="submit" value="Join" name="subscribe" id="mc-embedded-subscribe2" class="btn btn-primary ">
+                    </div>
+                    <div id="mce-responses2" class="clear">
+                      <div class="response" id="mce-error-response2" style="display:none"></div>
+                      <div class="response" id="mce-success-response2" style="display:none"></div>
+                    </div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ddc180777a163e0f9f66ee014_4b1bcfa0bc" tabindex="-1" value=""></div>
+                    <div class="clear"></div>
+                  </div>
+                </form>
+              </div>
+              <!--End mc_embed_signup-->
+            </div>
+            <!-- /.newsletter-wrapper -->
+          </div>
+          <!-- /.widget -->
+        </div>
+        <!-- /column -->
+      </div>
+      <!--/.row -->
+    </div>
+    <!-- /.container -->
+  </footer>
+  <div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+  </div>
+
+
+
+
+
+
+
+
+  {% comment %} SIGN UP {% endcomment %}
+
+
+<div class="modal fade" id="modal-signup" tabindex="-1" >
+  <div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content text-center">
+      <div class="modal-body">
+        <button type="button" class="btn-close"  data-bs-dismiss="modal" aria-label="Close"></button>
+        <h2 class="mb-3 text-end" >به کمپ شوالیه های روشنایی ملحق شوید</h2>
+        <p class="lead mb-6 text-start">در کمتر از یک دقیقه حساب کاربری خود را بسازید</p>
+        <form class="text-start mb-3" onclick="postSignUp()" method="post" >
+          <div class="form-floating mb-4" >
+            <input type="text"  class="form-control" name="name" placeholder="Name" id="signUpUserName">
+            <label for="signUpUserName">Name</label>
+          </div>
+          <div class="form-floating mb-4">
+            <input type="phone" class="form-control" name="phone" placeholder="Phone" id="signUpUserPhone">
+            <label for="signUpUserPhone">Phone</label>
+          </div>
+          <div class="form-floating password-field mb-4">
+            <input type="password" class="form-control" name="pass" placeholder="Password" id="signUpUserPass">
+            <span class="password-toggle"><i class="uil uil-eye"></i></span>
+            <label for="signUpUserPass">Password</label>
+          </div>
+          <div class="form-floating password-field mb-4">
+            <input type="password" class="form-control" name="confirmPass" placeholder="Confirm Password" id="signUpUserConfPass">
+            <span class="password-toggle"><i class="uil uil-eye"></i></span>
+            <label for="signUpUserConfPass">Confirm Password</label>
+          </div>
+
+          {% csrf_token %}
+          <a class="btn btn-primary rounded-pill btn-login w-100 mb-2">ایجاد حساب کاربری</a>
+        </form>
+        <!-- /form -->
+        <p class="mb-0">من حساب کاربری دارم <a href="#" data-bs-target="#modal-signin" data-bs-toggle="modal" data-bs-dismiss="modal" class="hover"><b>ورود</b></a></p>
+        <div class="divider-icon my-4">:)</div>
+
+      </div>
+      <!--/.modal-content -->
+    </div>
+    <!--/.modal-body -->
+  </div>
+  <!--/.modal-dialog -->
+</div>
+<!--/.modal -->
+
+
+  {% comment %} Verify Account  {% endcomment %}
+
+  <div class="modal fade" id="modal-verify" tabindex="-1" >
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content text-center">
+        <div class="modal-body">
+          <button type="button" class="btn-close"  data-bs-dismiss="modal" aria-label="Close"></button>
+          <h2 class="mb-3 text-end" >تایید ثبت نام</h2>
+          <p class="lead mb-6 text-start">کد فرستاده شده را در جای خالی پر کنید</p>
+          <form class="text-start mb-3" >
+
+            <div class="form-floating mb-4">
+              <input type="text" class="form-control" name="code" placeholder="Code" id="verifyCode">
+              <label for="verifyCode">Code</label>
+            </div>
+
+            <a onclick="verificationCode()" class="btn btn-primary rounded-pill btn-login w-100 mb-2">تایید</a>
+          </form>
+          <!-- /form -->
+          <p class="mb-0">حساب کاربری دارم، <a href="#" data-bs-target="#modal-signin" data-bs-toggle="modal" data-bs-dismiss="modal" class="hover"><b> ورود </b></a></p>
+          <div class="divider-icon my-4">:)</div>
+
+        </div>
+        <!--/.modal-content -->
+      </div>
+      <!--/.modal-body -->
+    </div>
+    <!--/.modal-dialog -->
+  </div>
+  <!--/.modal -->
+
+
+
+  {% comment %} SIGN IN {% endcomment %}
+
+<div class="modal fade" id="modal-signin" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content text-center">
+      <div class="modal-body">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h2 class="mb-3 text-end">خوش برگشتید </h2>
+        <p class="lead mb-6 text-start">برای ورود به حسابتان اطلاعات زیر را وارد کنید</p>
+        <form class="text-start mb-3">
+          <div class="form-floating mb-4">
+            <input type="text" class="form-control" name="loginPhone" placeholder="Phone" id="loginPhone">
+            <label for="loginPhone">Phone</label>
+          </div>
+          <div class="form-floating password-field mb-4">
+            <input type="password" class="form-control" name="LoginPass" placeholder="Password" id="loginPassword">
+            <span class="password-toggle"><i class="uil uil-eye"></i></span>
+            <label for="loginPassword">Password</label>
+          </div>
+          <a onclick="postSignIn()" class="btn btn-primary rounded-pill btn-login w-100 mb-2">ورود به میتروچیستا</a>
+        </form>
+        <!-- /form -->
+        <p class="mb-1"><a href="#" data-bs-target="#modal-forget" data-bs-toggle="modal" data-bs-dismiss="modal" class="hover">رمز عبورم رو فراموش کردم</a></p>
+        <p class="mb-0">من حساب کاربری ندارم<a href="#" data-bs-target="#modal-signup" data-bs-toggle="modal" data-bs-dismiss="modal" class="hover"> ساخت حساب کاربری </a></p>
+        <div class="divider-icon my-4">(:</div>
+
+        <!--/.social -->
+      </div>
+      <!--/.modal-content -->
+    </div>
+    <!--/.modal-body -->
+  </div>
+  <!--/.modal-dialog -->
+</div>
+<!--/.modal -->
+
+
+
+    {% comment %} FORGOT PASS {% endcomment %}
+
+
+<div class="modal fade" id="modal-forget" tabindex="-1" >
+  <div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content text-center">
+      <div class="modal-body">
+        <button type="button" class="btn-close"  data-bs-dismiss="modal" aria-label="Close"></button>
+        <h2 class="mb-3 text-end" >رمز عبرتون رو فراموش کردید؟</h2>
+        <p class="lead mb-6 text-start">در کمتر از یک دقیقه حساب کاربری خود بازیابی کنید</p>
+        <form class="text-start mb-3" >
+
+          <div class="form-floating mb-4">
+            <input type="text" class="form-control" name="forgetPhone" placeholder="Phone" id="forgetPhone">
+            <label for="phoneEmail">Phone</label>
+          </div>
+
+          <a onclick="forgetPass()" class="btn btn-primary rounded-pill btn-login w-100 mb-2">بازیابی حساب کاربری</a>
+        </form>
+        <!-- /form -->
+        <p class="mb-0">حساب کاربری ندارم، <a href="#" data-bs-target="#modal-signup" data-bs-toggle="modal" data-bs-dismiss="modal" class="hover"><b>ساخت حساب کاربری</b></a></p>
+        <div class="divider-icon my-4">:)</div>
+
+      </div>
+      <!--/.modal-content -->
+    </div>
+    <!--/.modal-body -->
+  </div>
+  <!--/.modal-dialog -->
+</div>
+<!--/.modal -->
+
+
+  <script src="{% static './assets/js/plugins.js' %}"></script>
+  <script src="{% static './assets/js/theme.js' %}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</body>
+
+
+<script>
+
+  function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+
+
+  const btnSubmitFormComment = document.getElementById("btn_sub_comment");
+  const btnSubmitFormSignUP = document.getElementById("btn_signup");
+  const btnSubmitFormSignIn = document.getElementById("btn_signin");
+  let VERIFICATION_CODE = ""
+
+  if (getCookie("isVerified") == "true"){
+    btnSubmitFormSignUP.style.display = "none";
+    btnSubmitFormSignIn.style.display = "none";
+    btnSubmitFormComment.style.display = "block";
+
+  } else if (getCookie("isVerified") == "false") {
+    btnSubmitFormSignUP.style.display = "block";
+    btnSubmitFormSignIn.style.display = "block";
+    btnSubmitFormComment.style.display = "none";
+
+  }
+
+  function postSignIn() {
+
+    const formData = new FormData();
+    let signInUserPhone = document.getElementById("loginPhone").value;
+    let signInUserPass = document.getElementById("loginPassword").value;
+
+    formData.append( "phone" , signInUserPhone );
+    formData.append( "pass" , signInUserPass );
+    formData.append( "confirmPass" , "");
+    formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
+
+    var req = jQuery.ajax({
+
+      url: '' ,
+      method: 'POST',
+      headers:{"X-CSRFToken": '{{ csrf_token }}' },
+
+      data: formData, // sends fields with filename mimetype etc
+
+
+      processData: false, // don't let jquery process the data
+      contentType: false // let xhr set the content type
+    });
+
+      req.then(function(response) {
+
+        if (response.isLogin == true){
+          //document.cookie = "isVerified=false;";
+          btnSubmitFormSignUP.style.display = "none";
+          btnSubmitFormSignIn.style.display = "none";
+          btnSubmitFormComment.style.display = "block";
+
+          $('#modal-signin').modal('hide');
+          document.cookie = "isVerified=true; path=/";
+          document.cookie = "phone="+ signInUserPhone +"; path=/;";
+        } else if (response.isLogin == "notVerified" ) {
+          $('#modal-signin').modal('hide');
+          $('#modal-verify').modal('show');
+        }
+
+
+        // alertify.success('Done !');
+      }, function(xhr) {
+        alertify.error("Something went wrong")
+        console.error('failed to fetch xhr', xhr)
+      })
+
+
+  }
+
+  function postSignUp() {
+
+    const formData = new FormData();
+    let signUpUserPhone = document.getElementById("signUpUserPhone").value;
+    let signUpUserName = document.getElementById("signUpUserName").value;
+    let signUpUserPass = document.getElementById("signUpUserPass").value;
+    let signUpUserConfPass = document.getElementById("signUpUserConfPass").value;
+
+    formData.append( "name" , signUpUserName );
+    formData.append( "phone" , signUpUserPhone );
+    formData.append( "pass" , signUpUserPass );
+    formData.append( "confirmPass" , signUpUserConfPass );
+    formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
+
+    var req = jQuery.ajax({
+
+      url: '' ,
+      method: 'POST',
+      headers:{"X-CSRFToken": '{{ csrf_token }}' },
+
+      data: formData, // sends fields with filename mimetype etc
+
+
+      processData: false, // don't let jquery process the data
+      contentType: false // let xhr set the content type
+    });
+
+      req.then(function(response) {
+
+        //document.cookie = "isVerified=true;";
+        if (response.signUp == true){
+          VERIFICATION_CODE =response.code;
+          document.cookie = "phone="+ signUpUserPhone +"; path=/;";
+          $('#modal-signup').modal('hide');
+          $('#modal-verify').modal('show');
+        }
+
+
+        // alertify.success('Done !');
+      }, function(xhr) {
+        alertify.error("Something went wrong")
+        console.error('failed to fetch xhr', xhr)
+      })
+
+
+  }
+
+  function verificationCode() {
+
+    const formData = new FormData();
+    let verifyCode = document.getElementById("verifyCode").value;
+    let phone = document.getElementById("signUpUserPhone").value;
+    if (!(phone != "none" || phone != "") ){
+      phone = document.getElementById("loginPhone").value;
+    }
+
+    if (VERIFICATION_CODE == verifyCode ){
+
+      formData.append( "verifyPhone" , phone );
+      formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
+
+      var req = jQuery.ajax({
+
+        url: '' ,
+        method: 'POST',
+        headers:{"X-CSRFToken": '{{ csrf_token }}' },
+
+        data: formData, // sends fields with filename mimetype etc
+
+
+        processData: false, // don't let jquery process the data
+        contentType: false // let xhr set the content type
+      });
+
+        req.then(function(response) {
+
+          console.log(response.isVerified)
+
+          if (response.isVerified == "True"){
+            $('#modal-verify').modal('hide');
+            document.cookie = "isVerified=true; path=/";
+            btnSubmitFormSignUP.style.display = "none";
+            btnSubmitFormSignIn.style.display = "none";
+            btnSubmitFormComment.style.display = "block";
+          }
+
+
+            // alertify.success('Done !');
+          }, function(xhr) {
+            alertify.error("Something went wrong")
+            console.error('failed to fetch xhr', xhr)
+          })
+    }
+  }
+
+
+  function postComment() {
+
+    const formData = new FormData();
+    let text = document.getElementById("comment_text").value;
+
+      formData.append( "comment" , text );
+      formData.append( "userPhone" , getCookie("phone") );
+
+      formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
+
+      var req = jQuery.ajax({
+
+        url: '' ,
+        method: 'POST',
+        headers:{"X-CSRFToken": '{{ csrf_token }}' },
+
+        data: formData, // sends fields with filename mimetype etc
+
+
+        processData: false, // don't let jquery process the data
+        contentType: false // let xhr set the content type
+      });
+
+        req.then(function(response) {
+
+          location.reload();
+
+            // alertify.success('Done !');
+          }, function(xhr) {
+            alertify.error("Something went wrong")
+            console.error('failed to fetch xhr', xhr)
+          })
+    }
+
+
+  function forgetPass(){
+
+    $('#modal-forget').modal('hide');
+    $('#modal-signin').modal('show');
+
+    const formData = new FormData();
+    let phone = document.getElementById("forgetPhone").value;
+
+      formData.append( "forgetPhone" ,phone );
+
+      formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
+
+      var req = jQuery.ajax({
+
+        url: '' ,
+        method: 'POST',
+        headers:{"X-CSRFToken": '{{ csrf_token }}' },
+
+        data: formData, // sends fields with filename mimetype etc
+
+
+        processData: false, // don't let jquery process the data
+        contentType: false // let xhr set the content type
+      });
+
+        req.then(function(response) {
+
+            // alertify.success('Done !');
+          }, function(xhr) {
+            alertify.error("Something went wrong")
+            console.error('failed to fetch xhr', xhr)
+          })
+  }
+
+
+</script>
+
+</html>
+` `

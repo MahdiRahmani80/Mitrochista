@@ -25,7 +25,7 @@ def debug_task(self):
 
 @app.on_after_configure.connect
 def setup_periodic_tasks(sender, **kwargs):
-    sender.add_periodic_task(crontab(hour=11),scrap.s()) # , minute=30
+    sender.add_periodic_task(crontab(hour=13),scrap.s()) # , minute=30 
 
 
 
