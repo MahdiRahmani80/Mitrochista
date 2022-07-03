@@ -1,8 +1,7 @@
 import random
 import  requests
 from django.http import JsonResponse
-
-
+from hashlib import sha256
 
 
 
@@ -56,8 +55,8 @@ def signUp(User,userName,phone,password,confirmPass):
             User.objects.create(name=userName,phone=phone,password=hashPass.hexdigest()).save()
             rand_code = str( random.randint(10000,99999))
             print(rand_code)
-            txt="کد تایید ورود به میتروچیستا : " + rand_code
-            sendSMS_verifyCode(phone,txt)
+
+            sendSMS_verifyCode(phone,rand_code,749122)
             return rand_code
         else:
             return False
@@ -69,10 +68,10 @@ def signUp(User,userName,phone,password,confirmPass):
 def forgetPass(User,forgetPhone):
 
     passwd = generateSimplePass()
-    txt = "رمز عبور جدید شما :‌"+ str(passwd)
+    txt =  str(passwd)
     new_pass = str(sha256(bytes(str(passwd),"utf-8")).hexdigest())
     User.objects.filter(phone=forgetPhone).update(password=new_pass)
-    sendSMS_verifyCode(forgetPhone,txt)
+    sendSMS_verifyCode(forgetPhone,txt,230731)
 
 
 def verifyAccount(User,phone):
@@ -83,20 +82,66 @@ def verifyAccount(User,phone):
 
 
 
-def sendSMS_verifyCode(phone,txt):
+
+def publisherSignin(publisher,phone,password):
+
+    data = {}
+
+    try:
+        pub = publisher.objects.filter(connectionWay=phone)
+    finally :
+
+        if pub:
+            if (str(pub[0].password) == str(password)):
+                return JsonResponse({ 'isLogin': "true", "pub_id": pub[0].id })
+            else:
+                return JsonResponse({ 'isLogin': "false", })
+        else :
+            return JsonResponse({ 'isLogin': "false", })
+
+
+def publisherForgetPass(publisher,phone):
+
+    newPass = generateSimplePass()
+    publisher.objects.filter(connectionWay=phone).update(password=newPass)
+
+    sendSMS_verifyCode(phone,newPass,230731)
+
+    return True
+
+
+
+def sendSMS_verifyCode(phone,txt,template):
 
     userName = "mahdi1380"
     passwd = "vOsyRPwKNfjzDqIb7TYJbJbZterHZEEdRjybf445HRXsg2ovyv3JzCXscW6wMELy"
     line="30007732002064"
-    res = requests.get("https://api.sms.ir/v1/send?username="+userName+"&password="+passwd+"&line="+line+"&mobile="+str(phone)+"&text="+str(txt))
+    header={
+        'X-API-KEY': 'vOsyRPwKNfjzDqIb7TYJbJbZterHZEEdRjybf445HRXsg2ovyv3JzCXscW6wMELy',
+        "Content-Type": "application/json; charset=utf-8",
+        }
+    url ="https://api.sms.ir/v1/send/verify"
+
+    body=  {
+        "mobile": str(phone),
+        "templateId": template,
+        "parameters": [
+        {
+            "name": "Code",
+            "value": str(txt)
+        }
+        ]
+    }
+
+    res = requests.post(url,headers=header,json=body)
 
 
-    print(res.json()["status"])
+    print( " SMS CODE:  " + str(res.json()["status"]))
     return (res.json()["status"])
 
 
 def generateSimplePass():
     rand = random.randint(1,20000)
-    password = str(sha256(bytes(str(rand),"utf-8")).hexdigest())[:6]
+    password = str(sha256(bytes(str(rand),"utf-8")).hexdigest())[:8]
     print(password)
     return password

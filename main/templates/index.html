@@ -40,7 +40,7 @@
                     </li>
 
                     <li class="nav-item dropdown dropdown-mega">
-                        <a class="nav-link dropdown-toggle" href="#">درباره ما</a>
+                        <a class="nav-link dropdown-toggle" href="/contact/">درباره ما</a>
                     </li>
 
                     <li class="nav-item dropdown dropdown-mega">
@@ -126,7 +126,7 @@
                             <li class="nav-item"><a class="dropdown-item" href="/partnership/">درخواست همکاری</a></li>
                           </ul>
                         </li>
-                        <li class="nav-item"><a class="dropdown-item" onclick="" href="" >ورود به پنل منتشر کننده ها</a></li>
+                        <li class="nav-item"><a class="dropdown-item" onclick="goToPublisherPage()">ورود به پنل منتشر کننده ها</a></li>
                       </div>
                     </ul>
                   </li>
@@ -674,7 +674,7 @@
           <div class="widget">
             <h3 class="h2 mb-3 ">میتروچیستا، فواره نور</h3>
             <p class="lead mb-5">تعداد کمی هستند که دلشون میخواد دنیا خفن تر و تعداد خیییییلی کمتر براش یه کاری میکنن اگه تو هم از همون هایی میتونی امروزتو متفات کنی با ثبت نام در میتروچیستا</p>
-            <a href="#" class="btn  btn-primary rounded-pill">شوالیه های روشنایی شوید</a>
+            <a href="#" class="btn  btn-primary rounded-pill">شوالیه روشنایی شوید</a>
           </div>
           <!-- /.widget -->
         </div>
@@ -687,7 +687,7 @@
           <div class="widget">
             <h4 class="widget-title  mb-3">بیشتر بخوانید</h4>
             <ul class="list-unstyled text-reset mb-0">
-              <li><a href="#">درباره ما</a></li>
+              <li><a href="/contact/">درباره ما</a></li>
               <li><a href="#">داستان ما</a></li>
               <li><a href="#">دوره ها</a></li>
               <li><a href="#">مدرس ها</a></li>
@@ -731,16 +731,36 @@
   </div>
   <script src="{% static './assets/js/plugins.js' %}"></script>
   <script src="{% static './assets/js/theme.js' %}"></script>
+
+  <script>
+
+    function getCookie(cname) {
+      let name = cname + "=";
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let ca = decodedCookie.split(';');
+      for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    function goToPublisherPage(){
+
+      if (getCookie("pub_id") !="" ){
+        window.open("/pannel/website/"+getCookie("pub_id"))
+      }else{
+        window.open("/pannel/signin/")
+      }
+    }
+
+
+  </script>
 </body>
 
 </html>
-
-
-
-
-
-{% comment %} <form method="post" id="search">
-        {% csrf_token %}
-        <input placeholder="Search" type="text" name="search" ></input>
-        <input type="submit"></input>
-    </form> {% endcomment %}

@@ -317,7 +317,7 @@
           <!--/column -->
         </div>
         <!--/.row -->
-        <div class="position-relative" dir="auto">
+        <div class="position-relative" >
           <div class="shape rounded-circle bg-soft-yellow rellax w-16 h-16" data-rellax-speed="1" style="bottom: 0.5rem; right: -1.7rem;"></div>
           <div class="shape rounded-circle bg-line red rellax w-16 h-16" data-rellax-speed="1" style="top: 0.5rem; left: -1.7rem;"></div>
           <div class="swiper-container dots-closer mb-6" data-margin="0" data-dots="true" data-items-xxl="4" data-items-xl="3" data-items-lg="3" data-items-md="2" data-items-xs="1">
@@ -327,10 +327,68 @@
                   <div class="item-inner">
                     <div class="card">
                       <div class="card-body">
-                        <img class="rounded-circle w-15 mb-4" src="./assets/img/avatars/te1.jpg" srcset="./assets/img/avatars/te1@2x.jpg 2x" alt="" />
-                        <h4 class="mb-1">فرم درخواست همکاری</h4>
-                        <div class="meta mb-2">در کمتر از چند دقیقه به دوستان ما بپیوندید</div>
-                        <p class="mb-2">بعد از اتمام فرم منتظر تماس از سوی همکاران ما باشید</p>
+
+                        <div dir="auto">
+                          <img class="rounded-circle w-15 mb-4" src="./assets/img/avatars/te1.jpg" srcset="./assets/img/avatars/te1@2x.jpg 2x" alt="" />
+                          <h4 class="mb-1">فرم درخواست همکاری</h4>
+                          <div class="meta mb-2">در کمتر از چند دقیقه به دوستان ما بپیوندید</div>
+                          <p class="mb-2">بعد از اتمام فرم منتظر تماس از سوی همکاران ما باشید</p>
+                        </div>
+                        <br><br>
+
+
+                        <form class="contact-form needs-validation" method="post" novalidate>
+                          {% csrf_token %}
+                          <div class="messages"></div>
+                          <div class="row gx-4">
+                            <div class="col-md-6" >
+                              <div class="form-floating mb-4">
+                                <input id="form_name" dir="auto" type="text" name="name" class="form-control" placeholder="Jane" required>
+                                <label for="form_name">نام وبسایت *</label>
+                              </div>
+                            </div>
+                            <!-- /column -->
+                            <div class="col-md-6">
+                              <div class="form-floating mb-4">
+                                <input id="form_lastname" dir="auto" type="text" name="surname" class="form-control" placeholder="Doe" required>
+                                <label for="form_lastname">Last Name *</label>
+                              </div>
+                            </div>
+                            <!-- /column -->
+                            <div class="col-md-6">
+                              <div class="form-floating mb-4">
+                                <input id="form_email" dir="auto" type="email" name="email" class="form-control" placeholder="jane.doe@example.com" required>
+                                <label for="form_email">Email *</label>
+                              </div>
+                            </div>
+                            <!-- /column -->
+                            <div class="col-md-6">
+                              <div class="form-select-wrapper mb-4">
+                                <select class="form-select" id="form-select" name="department" required>
+                                  <option selected disabled value="">Select a department</option>
+                                  <option value="Sales">Sales</option>
+                                  <option value="Marketing">Marketing</option>
+                                  <option value="Customer Support">Customer Support</option>
+                                </select>
+                              </div>
+                            </div>
+                            <!-- /column -->
+                            <div class="col-12">
+                              <div class="form-floating mb-4">
+                                <textarea id="form_message" dir="auto" name="message" class="form-control" placeholder="Your message" style="height: 150px" required></textarea>
+                                <label for="form_message">Message *</label>
+                              </div>
+                            </div>
+                            <!-- /column -->
+                            <div class="col-12 text-center">
+                              <input type="submit" class="btn btn-primary rounded-pill btn-send mb-3" value="Send message">
+                            </div>
+                            <!-- /column -->
+                          </div>
+                          <!-- /.row -->
+                        </form>
+
+
 
                       </div>
                       <!--/.card-body -->

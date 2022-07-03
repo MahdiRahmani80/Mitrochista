@@ -5,6 +5,8 @@ from . import views
 urlpatterns = [
     path('',views.index),
     path('explore/',views.result),
+    path('pannel/signin/',views.publisher_signin),
+    path('contact/',views.contact),
     path('partnership/',views.requestPartnership),
     re_path(r'^pannel/website/(?P<id>.*)$',views.websitePannel),
     re_path(r'^tag/(?P<tag>.*)/$',views.tag),

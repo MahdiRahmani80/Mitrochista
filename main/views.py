@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from . import models
 from .search import search
-from .auth import forgetPass,authorize
-from django.http import HttpResponseRedirect
+from .auth import forgetPass,authorize,publisherSignin,publisherForgetPass
+from django.http import HttpResponseRedirect, JsonResponse
 from django.core.paginator import Paginator
-from .makeMonney import clickBtn,goToIDPAY
+from .makeMonney import clickBtn,goToIDPAY,addAmountInCredit
 from .community import addComment
 from django.db.models import Q
 from django.views.decorators.csrf import csrf_exempt
@@ -246,10 +246,18 @@ def websitePannel(request,id=None):
     result = res.get_page(page_number)
 
     if amount:
-        return HttpResponseRedirect( goToIDPAY(amount,pub))
+        return HttpResponseRedirect( goToIDPAY(amount,pub,models.Payment))
 
     if request.POST:
-        print(request.POST)
+        payment_publisher = models.Payment.objects.filter(idpay_id=request.POST.get("id"))
+
+        if payment_publisher:
+            payment_publisher.update(stp2DataReseveIDPAY=str(request.POST),amount=request.POST.get("amount"))
+
+            if str(request.POST.get("status")) == "100" or str(request.POST.get("status")) == "101" or str(request.POST.get("status")) == "200":
+                addAmountInCredit(request.POST.get("amount"),pub,models.Credit)
+                return HttpResponseRedirect("#")
+
 
 
     d={
@@ -259,8 +267,37 @@ def websitePannel(request,id=None):
     return render(request,"website_pannel.html",d)
 
 
+def publisher_signin(request):
+
+    phone = request.POST.get('phone')
+    password = request.POST.get('password')
+    forgetPhone = request.POST.get('forgetPassword')
+
+    if phone:
+        return publisherSignin(models.Publisher,phone,password)
+
+    if forgetPhone:
+        publisherForgetPass(models.Publisher,forgetPhone)
 
 
+
+    d={
+
+    }
+    return render(request,"publisher_signin.html",d)
+
+
+
+def contact (request):
+
+    name  = request.POST.get('name')
+    email = request.POST.get('email')
+    msg   = request.POST.get('msg')
+
+    if email:
+        models.contactUs.objects.create(name=name,email=email,text=msg)
+
+    return render(request,"contact.html")
 
 
 

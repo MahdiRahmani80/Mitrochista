@@ -4,7 +4,7 @@ from . import models
 
 
 class User(admin.ModelAdmin):
-    search_fields = ['name','email','phone','ip','bio']
+    search_fields = ['name','phone',]
     list_display = ['name','id','isVerified',"score"]
     list_filter = ('date','isVerified')
 
@@ -65,6 +65,14 @@ class CreditAdmin(admin.ModelAdmin):
 class UserAddCommentAdmin(admin.ModelAdmin):
     list_display = ['user',]
 
+class PaymentAdmin(admin.ModelAdmin):
+    list_display = ['publisher','amount','time']
+    list_filter = ('publisher','time')
+    search_fields = ['publisher',]
+
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ['name','email','time']
+    list_filter = ('time',)
 
 admin.site.register(models.Course,Course)
 admin.site.register(models.SocalMedia)
@@ -86,11 +94,9 @@ admin.site.register(models.UserSearchCourse)
 admin.site.register(models.ReportPublisher)
 admin.site.register(models.ReportCourse)
 admin.site.register(models.Credit,CreditAdmin)
-admin.site.register(models.Payment)
-admin.site.register(models.Pay)
+admin.site.register(models.Payment,PaymentAdmin)
 admin.site.register(models.ClickCourse,ClickCourseAdmin)
 admin.site.register(models.WatchCourse)
 admin.site.register(models.SearchLog)
-admin.site.register(models.contactUs)
-admin.site.register(models.Article)
+admin.site.register(models.contactUs,ContactAdmin)
 

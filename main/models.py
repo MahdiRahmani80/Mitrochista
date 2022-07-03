@@ -58,18 +58,25 @@ class Publisher (models.Model):
     id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
     url = models.URLField()
     name= models.CharField(max_length=200,null=True,blank=True)
-    connectionWay =  models.CharField(max_length=600,help_text="email or phone")
+    password = models.CharField(max_length=500)
+    connectionWay =  models.CharField(max_length=600,help_text="email or phone",unique=True)
     img = models.ImageField(upload_to="Publisher/Image")
     SEORank = models.BigIntegerField(default=0)
     LastIndexed = models.DateTimeField()
     CreatedDate = models.DateTimeField(auto_now_add=True)
     isScrapAlgorithmWrite = models.BooleanField("Is Published",default=False)
+    isUP = models.BooleanField(default=False)
     indexCoder = models.CharField(max_length=200)
 
     def __str__(self):
         return self.name
 
     def save(self,*args,**kwargs):
+
+        if self.isUP:
+            if not Credit.objects.filter(publisher=self):
+                Credit.objects.create(publisher=self)
+
         if self.isScrapAlgorithmWrite:
             Publish.objects.filter(publisher__id=self.id).update(is_visible=True)
 
@@ -206,21 +213,16 @@ class Credit (models.Model):
     def __str__(self):
         return str(self.monney)
 
-class Payment (models.Model):
+class Payment(models.Model):
     id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
-    title = models.CharField(max_length=200)
-    price = models.BigIntegerField(default=0)
-    date = models.DateTimeField(default=datetime.now())
+    idpay_id = models.CharField(max_length=500)
+    amount = models.CharField(max_length=5000)
+    publisher = models.ForeignKey(Publisher,on_delete=models.CASCADE)
+    stp1DataReseveIDPAY = models.TextField(null=True,blank=True)
+    stp2DataReseveIDPAY = models.TextField(null=True,blank=True)
+    time = models.DateTimeField(default=datetime.now())
 
     def __str__(self):
-        return str(self.title)
-
-class Pay (models.Model):
-    id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
-    payment = models.ForeignKey(Payment,on_delete=models.CASCADE)
-    publisher = models.ForeignKey(Publisher,on_delete=models.CASCADE)
-
-    def __str__ (self):
         return str(self.publisher)
 
 
@@ -258,16 +260,16 @@ class SearchLog(models.Model):
 class contactUs (models.Model):
     name = models.CharField(max_length=300)
     email = models.EmailField()
-    subject = models.CharField(max_length=300)
+    subject = models.CharField(max_length=300, blank=True, null=True)
     text = models.TextField()
+    time = models.DateField(default=datetime.now())
 
     def __str__(self):
         return str(self.email)
 
 
-class Article(models.Model):
-    title = models.CharField(max_length=200)
 
 
-    def get_absolute_url(self):
-        return "/%i/" % self.id
+
+    # def get_absolute_url(self):
+        # return "/%i/" % self.id

@@ -44,7 +44,7 @@ def howIsShowPrice(models,pub,price):
     return last_monney
 
 
-def goToIDPAY(amount,publisher):
+def goToIDPAY(amount,publisher,payment):
 
     url ="https://api.idpay.ir/v1.1/payment"
     header={
@@ -59,6 +59,18 @@ def goToIDPAY(amount,publisher):
         "callback": DOMAIN + "pannel/website/"+str(publisher.id)
     }
     res = requests.post(url,json=data,headers=header)
+
+    payment.objects.create(stp1DataReseveIDPAY=str(res.json()),publisher=publisher,idpay_id=str(res.json()["id"]))
+
     return res.json()["link"]
 
+
+
+def addAmountInCredit(amount,publisher,Credit):
+
+    lastMonney = Credit.objects.get(publisher=publisher).monney
+    newAccountCharge = int(amount)//10 + int(lastMonney)
+    Credit.objects.filter(publisher=publisher).update(monney=newAccountCharge)
+
+    return True
 
