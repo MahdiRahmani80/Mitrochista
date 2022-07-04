@@ -22,7 +22,7 @@
     <header class="wrapper">
         <nav class="navbar navbar-expand-lg fancy navbar-light navbar-bg-light caret-none ">
           <div class="container">
-            <div class="shadow-lg  navbar-collapse-wrapper bg-white d-flex flex-row flex-nowrap w-100 justify-content-between align-items-center">
+            <div class="navbar-collapse-wrapper bg-white d-flex flex-row flex-nowrap w-100 justify-content-between align-items-center">
               <div class="navbar-brand w-100">
                 <a href="./index.html">
                   <img src="{% static './img/Mitrochista.png' %}" style="widget:60dp;height:60px" srcset="{% static './img/Mitrochista.png' %} 2x" alt="" />
@@ -30,18 +30,18 @@
               </div>
               <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start" dir="ltr">
                 <div class="offcanvas-header d-lg-none d-xl-none">
-                  <a href="/"><img src="{% static './img/Mitrochista.png' %}" srcset="{% static './img/Mitrochista.png' %} 2x" alt="" /></a>
+                  <a href="./index.html"><img src="{% static './assets/img/logo-light.png' %}" srcset="{% static './assets/img/logo-light@2x.png' %} 2x" alt="" /></a>
                   <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
                   <ul class="navbar-nav">
 
                       <li class="nav-item dropdown dropdown-mega">
-                        <a class="nav-link dropdown-toggle" href="#">تماس با ما</a>
+                        <a class="nav-link dropdown-toggle" href="/contact/">تماس با ما</a>
                       </li>
 
                       <li class="nav-item dropdown dropdown-mega">
-                          <a class="nav-link dropdown-toggle" href="#">درباره ما</a>
+                          <a class="nav-link dropdown-toggle" href="/about/">درباره ما</a>
                       </li>
 
                       <li class="nav-item dropdown dropdown-mega">
@@ -49,57 +49,57 @@
                           <ul class="dropdown-menu mega-menu">
                             <li class="mega-menu-content">
                               <div class="row gx-0 gx-lg-3">
-                                <div class="col-lg-4">
-                                  <h6 class="dropdown-header">Usage</h6>
+                                <div class="col-lg-4" dir="auto">
+                                  <h6 class="dropdown-header">برنامه نویسی</h6>
                                   <ul class="list-unstyled cc-2 pb-lg-1">
-                                    <li><a class="dropdown-item" href="./docs/index.html">Get Started</a></li>
-                                    <li><a class="dropdown-item" href="./docs/forms.html">Forms</a></li>
-                                    <li><a class="dropdown-item" href="./docs/faq.html">FAQ</a></li>
-                                    <li><a class="dropdown-item" href="./docs/changelog.html">Changelog</a></li>
-                                    <li><a class="dropdown-item" href="./docs/credits.html">Credits</a></li>
+                                    <li><a class="dropdown-item" href="/tag/پایتون">پایتون</a></li>
+                                    <li><a class="dropdown-item" href="/tag/جاوا">جاوا</a></li>
+                                    <li><a class="dropdown-item" href="/tag/جاوا اسکریپت">جاوا اسکریپت</a></li>
+                                    <li><a class="dropdown-item" href="/tag/جاوا اسکریپت">go</a></li>
+                                    <li><a class="dropdown-item" href="/tag/هوش مصنوعی">هوش مصنوعی</a></li>
                                   </ul>
-                                  <h6 class="dropdown-header mt-lg-6">Styleguide</h6>
+                                <h6 class="dropdown-header mt-lg-6">دانشگاهی</h6>
                                   <ul class="list-unstyled cc-2">
-                                    <li><a class="dropdown-item" href="./docs/styleguide/colors.html">Colors</a></li>
-                                    <li><a class="dropdown-item" href="./docs/styleguide/fonts.html">Fonts</a></li>
-                                    <li><a class="dropdown-item" href="./docs/styleguide/icons-svg.html">SVG Icons</a></li>
-                                    <li><a class="dropdown-item" href="./docs/styleguide/icons-font.html">Font Icons</a></li>
-                                    <li><a class="dropdown-item" href="./docs/styleguide/illustrations.html">Illustrations</a></li>
-                                    <li><a class="dropdown-item" href="./docs/styleguide/backgrounds.html">Backgrounds</a></li>
-                                    <li><a class="dropdown-item" href="./docs/styleguide/misc.html">Misc</a></li>
+                                    <li><a class="dropdown-item" href="/tag/ریاضی">ریاضی</a></li>
+                                    <li><a class="dropdown-item" href="/tag/فیزیک">فیزیک</a></li>
+                                    <li><a class="dropdown-item" href="/tag/شیمی">شیمی</a></li>
+                                    <li><a class="dropdown-item" href="/tag/ادبیات فارسی">ادبیات فارسی</a></li>
+                                    <li><a class="dropdown-item" href="/tag/مهندسی متابولیک">مهندسی متابولیک</a></li>
+                                    <li><a class="dropdown-item" href="/tag/مهندسی هوا فضا">مهندسی هوا فضا</a></li>
+                                    <li><a class="dropdown-item" href="/tag/مهندسی کامپیوتر">مهندسی کامپیوتر</a></li>
                                   </ul>
                                 </div>
                                 <!--/column -->
                                 <div class="col-lg-8">
-                                  <h6 class="dropdown-header">Elements</h6>
+                                  <h6 class="dropdown-header">برخی از دسته بندی های پرطرفدار</h6>
                                   <ul class="list-unstyled cc-3">
-                                    <li><a class="dropdown-item" href="./docs/elements/accordion.html">Accordion</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/alerts.html">Alerts</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/animations.html">Animations</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/avatars.html">Avatars</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/background.html">Background</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/badges.html">Badges</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/breadcrumb.html">Breadcrumb</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/buttons.html">Buttons</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/card.html">Card</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/carousel.html">Carousel</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/dividers.html">Dividers</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/form-elements.html">Form Elements</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/image-hover.html">Image Hover</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/image-mask.html">Image Mask</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/lightbox.html">Lightbox</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/player.html">Media Player</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/modal.html">Modal</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/progressbar.html">Progressbar</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/shadows.html">Shadows</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/shapes.html">Shapes</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/tables.html">Tables</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/tabs.html">Tabs</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/text-animations.html">Text Animations</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/text-highlight.html">Text Highlight</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/tiles.html">Tiles</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/tooltips-popovers.html">Tooltips & Popovers</a></li>
-                                    <li><a class="dropdown-item" href="./docs/elements/typography.html">Typography</a></li>
+                                    <li><a class="dropdown-item" href="/tag/شبیه سازی">شبیه سازی</a></li>
+                                    <li><a class="dropdown-item" href="/tag/matlab">matlab</a></li>
+                                    <li><a class="dropdown-item" href="/tag/بهینه سازی">بهینه سازی</a></li>
+                                    <li><a class="dropdown-item" href="/tag/مدل سازی">مدل سازی</a></li>
+                                    <li><a class="dropdown-item" href="/tag/programming">programming</a></li>
+                                    <li><a class="dropdown-item" href="/tag/c#">c#</a></li>
+                                    <li><a class="dropdown-item" href="/tag/پایگاه داده">پایگاه داده</a></li>
+                                    <li><a class="dropdown-item" href="/tag/نرم افزار متلب">نرم افزار متلب</a></li>
+                                    <li><a class="dropdown-item" href="/tag/انیمیشن">انیمیشن</a></li>
+                                    <li><a class="dropdown-item" href="/tag/طراحی">طراحی</a></li>
+                                    <li><a class="dropdown-item" href="/tag/مدیریت">مدیریت</a></li>
+                                    <li><a class="dropdown-item" href="/tag/مهندسی عمران">مهندسی عمران</a></li>
+                                    <li><a class="dropdown-item" href="/tag/برنامه نویسی اندروید">برنامه نویسی اندروید</a></li>
+                                    <li><a class="dropdown-item" href="/tag/ترانسفورماتور">ترانسفورماتور</a></li>
+                                    <li><a class="dropdown-item" href="/tag/بهینه سازی هوشمند">بهینه سازی هوشمند</a></li>
+                                    <li><a class="dropdown-item" href="/tag/دینامیک">دینامیک</a></li>
+                                    <li><a class="dropdown-item" href="/tag/زیست شناسی">زیست شناسی</a></li>
+                                    <li><a class="dropdown-item" href="/tag/طراحی رابط کاربری">طراحی رابط کاربری</a></li>
+                                    <li><a class="dropdown-item" href="/tag/حسابداری">حسابداری</a></li>
+                                    <li><a class="dropdown-item" href="/tag/طراحی وب">طراحی وب</a></li>
+                                    <li><a class="dropdown-item" href="/tag/شبکه">شبکه</a></li>
+                                    <li><a class="dropdown-item" href="/tag/میدان مغناطیسی">میدان مغناطیسی</a></li>
+                                    <li><a class="dropdown-item" href="/tag/مکانیک سیالات">مکانیک سیالات</a></li>
+                                    <li><a class="dropdown-item" href="/tag/جبر خطی">جبر خطی</a></li>
+                                    <li><a class="dropdown-item" href="/tag/مشتق">مشتق</a></li>
+                                    <li><a class="dropdown-item" href="/tag/گرامر">گرامر</a></li>
+                                    <li><a class="dropdown-item" href="/tag/الگوریتم">الگوریتم</a></li>
                                   </ul>
                                 </div>
                                 <!--/column -->
@@ -127,12 +127,12 @@
                               <li class="nav-item"><a class="dropdown-item" href="/partnership/">درخواست همکاری</a></li>
                             </ul>
                           </li>
-                          <li class="nav-item"><a class="dropdown-item" onclick="" href="" >ورود به پنل منتشر کننده ها</a></li>
+                          <li class="nav-item"><a class="dropdown-item" onclick="goToPublisherPage()">ورود به پنل منتشر کننده ها</a></li>
                         </div>
                       </ul>
                     </li>
                     <li class="nav-item dropdown dropdown-mega">
-                      <a class="nav-link dropdown-toggle" href="/explore/">همه دوره ها</a>
+                      <a class="nav-link dropdown-toggle" href="/explore/">دوره ها</a>
                     </li>
 
                   </ul>
@@ -311,13 +311,14 @@
     <!-- /section -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="bg-dark text-inverse">
+
+  <footer class="bg-dark text-inverse mt-0 mt-md-16">
     <div class="container py-13 py-md-15">
       <div class="row gy-6 gy-lg-0">
         <div class="col-md-4 col-lg-3">
           <div class="widget">
-            {% comment %} <img class="mb-4" src="./assets/img/logo-light.png" srcset="./assets/img/logo-light@2x.png 2x" alt="" /> {% endcomment %}
-            <p class="mb-4">© 2021 Sandbox. <br class="d-none d-lg-block" />All rights reserved.</p>
+            <img class="mb-4" src="{% static './assets/img/logo-light.png' %}" srcset="{% static './assets/img/logo-light@2x.png' %} 2x" alt="" />
+            <p class="mb-4">© 2022 Mitrochista. <br class="d-none d-lg-block" />به امید علمی که خرد می آورد</p>
             <nav class="nav social social-white">
               <a href="#"><i class="uil uil-twitter"></i></a>
               <a href="#"><i class="uil uil-facebook-f"></i></a>
@@ -332,35 +333,35 @@
         <!-- /column -->
         <div class="col-md-4 col-lg-3">
           <div class="widget">
-            <h4 class="widget-title text-white mb-3">Get in Touch</h4>
-            <address class="pe-xl-15 pe-xxl-17">Moonshine St. 14/05 Light City, London, United Kingdom</address>
-            <a href="mailto:#">info@email.com</a><br /> 00 (123) 456 78 90
+            <h4 class="widget-title text-white mb-3">با ما درتماس باشید</h4>
+            <address class="pe-xl-15 pe-xxl-17">مازندران - قائمشهر</address>
+            <a href="mailto:mail.mitrochista.ir">mail.mitrochista.ir</a><br /> +98 (933) 083 26 76<br> +98 (903) 162 40 99
           </div>
           <!-- /.widget -->
         </div>
         <!-- /column -->
         <div class="col-md-4 col-lg-3">
           <div class="widget">
-            <h4 class="widget-title text-white mb-3">Learn More</h4>
-            <ul class="list-unstyled  mb-0">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Our Story</a></li>
-              <li><a href="#">Projects</a></li>
-              <li><a href="#">Terms of Use</a></li>
-              <li><a href="#">Privacy Policy</a></li>
+            <h4 class="widget-title text-white  mb-3">بیشتر بخوانید</h4>
+            <ul class="list-unstyled text-reset mb-0">
+              <li><a href="/contact/">درباره ما</a></li>
+              <li><a href="#">داستان ما</a></li>
+              <li><a href="#">دوره ها</a></li>
+              <li><a href="#">مدرس ها</a></li>
+              <li><a href="#">وبسایت ها</a></li>
             </ul>
           </div>
-          <!-- /.widget -->
         </div>
         <!-- /column -->
         <div class="col-md-12 col-lg-3">
           <div class="widget">
-            <h4 class="widget-title text-white mb-3">Our Newsletter</h4>
-            <p class="mb-5">Subscribe to our newsletter to get our news & deals delivered to you.</p>
+            <h4 class="widget-title text-white mb-3">به خبرنامه ما بپیوندید</h4>
+            <p class="mb-5"> اگه دوست دارید از اخبار جدید دوره ها ، اساتید مطلع بشید، ایمیل خود را وارد کنید</p>
             <div class="newsletter-wrapper">
               <!-- Begin Mailchimp Signup Form -->
               <div id="mc_embed_signup2">
-                <form action="https://elemisfreebies.us20.list-manage.com/subscribe/post?u=aa4947f70a475ce162057838d&amp;id=b49ef47a9a" method="post" id="mc-embedded-subscribe-form2" name="mc-embedded-subscribe-form" class="validate dark-fields" target="_blank" novalidate>
+                <form method="post">
+                  {% csrf_token %}
                   <div id="mc_embed_signup_scroll2">
                     <div class="mc-field-group input-group form-floating">
                       <input type="email" value="" name="EMAIL" class="required email form-control" placeholder="Email Address" id="mce-EMAIL2">
@@ -809,8 +810,32 @@
           })
   }
 
+  function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+
+  function goToPublisherPage(){
+
+    if (getCookie("pub_id") !="" ){
+      window.open("/pannel/website/"+getCookie("pub_id"))
+    }else{
+      window.open("/pannel/signin/")
+    }
+  }
+
 
 </script>
 
 </html>
-` `

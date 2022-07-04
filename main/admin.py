@@ -74,6 +74,10 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = ['name','email','time']
     list_filter = ('time',)
 
+class WatchCourseAdmin(admin.ModelAdmin):
+    list_display = ['course','ip','date']
+    list_filter = ('date',)
+
 admin.site.register(models.Course,Course)
 admin.site.register(models.SocalMedia)
 admin.site.register(models.User,User)
@@ -96,7 +100,7 @@ admin.site.register(models.ReportCourse)
 admin.site.register(models.Credit,CreditAdmin)
 admin.site.register(models.Payment,PaymentAdmin)
 admin.site.register(models.ClickCourse,ClickCourseAdmin)
-admin.site.register(models.WatchCourse)
+admin.site.register(models.WatchCourse,WatchCourseAdmin)
 admin.site.register(models.SearchLog)
 admin.site.register(models.contactUs,ContactAdmin)
-
+admin.site.register(models.newsLetter)

@@ -14,6 +14,13 @@ def index(request):
 
     search_text = request.POST.get('search')
     result = None
+
+
+    newsLetter = request.POST.get("EMAIL")
+    if newsLetter:
+        models.newsLetter.objects.update_or_create(email=str(newsLetter))
+
+
     if search_text:
 
         return HttpResponseRedirect("/explore/?search="+search_text)
@@ -39,6 +46,11 @@ def result(request):
     res_obj = all_res_obj = None
     res = None
     all_result=None
+
+
+    newsLetter = request.POST.get("EMAIL")
+    if newsLetter:
+        models.newsLetter.objects.update_or_create(email=str(newsLetter))
 
     # print(search_text)
     if search_text:
@@ -87,6 +99,11 @@ def result(request):
 # TAG
 def tag (request,tag=None):
 
+
+    newsLetter = request.POST.get("EMAIL")
+    if newsLetter:
+        models.newsLetter.objects.update_or_create(email=str(newsLetter))
+
     TAG = models.TAG.objects.filter(name=tag.replace("%20", " "))[0]
     all_result=models.CourseTAG.objects.filter(Q(tag=TAG) & Q(publisher__is_visible=True))
 
@@ -114,6 +131,14 @@ def course (request,id=None,course=None):
     click = request.POST.get('click')
     ip = get_client_ip(request)
 
+    if request.method == 'GET':
+        cou = models.Course.objects.get(id=id)
+        models.WatchCourse.objects.create(course=cou,ip=get_client_ip(request)).save()
+        print("ok")
+
+    newsLetter = request.POST.get("EMAIL")
+    if newsLetter:
+        models.newsLetter.objects.update_or_create(email=str(newsLetter))
 
 
     if click:
@@ -149,6 +174,11 @@ def teachersCourse (request,teacher=None):
     tea = models.CourseTAG.objects.filter(Q(master=teacher) & Q(publisher__is_visible=True))
     # print(teacher)
 
+
+    newsLetter = request.POST.get("EMAIL")
+    if newsLetter:
+        models.newsLetter.objects.update_or_create(email=str(newsLetter))
+
     res = Paginator(tea,25)
     obj_page = res.get_page(page_number)
 
@@ -164,6 +194,11 @@ def teacher (request):
     page_number = request.GET.get('page')
     isMostScore = request.GET.get('mostscore')
     teacher_search = request.GET.get('search')
+
+
+    newsLetter = request.POST.get("EMAIL")
+    if newsLetter:
+        models.newsLetter.objects.update_or_create(email=str(newsLetter))
 
     res = None
 
@@ -195,6 +230,11 @@ def coursePublisher (request,pub_id=None):
     search_text = request.GET.get('search')
     all_result = models.CourseTAG.objects.filter(Q(publisher__publisher__id=pub_id) & Q(publisher__is_visible=True))
 
+
+    newsLetter = request.POST.get("EMAIL")
+    if newsLetter:
+        models.newsLetter.objects.update_or_create(email=str(newsLetter))
+
     res = Paginator(all_result,25)
     p = res.get_page(page_number)
 
@@ -210,6 +250,11 @@ def coursePublisher (request,pub_id=None):
 
 # PUBLISHER
 def publisher (request):
+
+
+    newsLetter = request.POST.get("EMAIL")
+    if newsLetter:
+        models.newsLetter.objects.update_or_create(email=str(newsLetter))
 
     page_number = request.GET.get('page')
     pub = models.Publisher.objects.all()
@@ -227,6 +272,9 @@ def publisher (request):
 
 def requestPartnership(request):
 
+    newsLetter = request.POST.get("EMAIL")
+    if newsLetter:
+        models.newsLetter.objects.update_or_create(email=str(newsLetter))
 
     d={}
     return render(request,"requestPartnership.html",d)
@@ -238,6 +286,10 @@ def websitePannel(request,id=None):
 
     page_number = request.GET.get('page')
     amount = request.POST.get('chargePrice')
+
+    newsLetter = request.POST.get("EMAIL")
+    if newsLetter:
+        models.newsLetter.objects.update_or_create(email=str(newsLetter))
 
     pub = models.Publisher.objects.filter(id=id)[0]
     credit = models.Credit.objects.filter(publisher=pub)[0]
@@ -273,6 +325,10 @@ def publisher_signin(request):
     password = request.POST.get('password')
     forgetPhone = request.POST.get('forgetPassword')
 
+    newsLetter = request.POST.get("EMAIL")
+    if newsLetter:
+        models.newsLetter.objects.update_or_create(email=str(newsLetter))
+
     if phone:
         return publisherSignin(models.Publisher,phone,password)
 
@@ -293,6 +349,10 @@ def contact (request):
     name  = request.POST.get('name')
     email = request.POST.get('email')
     msg   = request.POST.get('msg')
+
+    newsLetter = request.POST.get("EMAIL")
+    if newsLetter:
+        models.newsLetter.objects.update_or_create(email=str(newsLetter))
 
     if email:
         models.contactUs.objects.create(name=name,email=email,text=msg)

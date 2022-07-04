@@ -268,7 +268,12 @@ class contactUs (models.Model):
         return str(self.email)
 
 
+class newsLetter(models.Model):
+    id = models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
+    email = models.EmailField()
 
+    def __str__(self) :
+        return str(self.email)
 
 
     # def get_absolute_url(self):
