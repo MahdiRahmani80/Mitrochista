@@ -13,7 +13,7 @@ class Course (models.Model):
     # upload_img = models.ImageField(null=True,blank = True)
     discription = models.TextField(null=True,blank = True)
     price = models.BigIntegerField()
-    url = models.URLField(unique=True)
+    url = models.URLField(unique=True,max_length=5000)
     students = models.BigIntegerField(default=0)
     time = models.BigIntegerField(help_text="timestamp in min")
     time_str = models.CharField(max_length=500)

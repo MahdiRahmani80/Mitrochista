@@ -135,12 +135,6 @@ def getData(connection,all_tag,course_list,url,FIRST,LAST,csv_writer,pub_st,PUBL
 
 def init(PUBLISHER,DOMAIN,instaBot):
 
-    # Make DB connection
-    # connection = psycopg2.connect(
-    #     host="localhost",
-    #     database="mitro_postgress_db",
-    #     user="mahdi",
-    #     password="M@hdi1380")
     connection = sqlite3.connect('db.sqlite3',check_same_thread=False)
 
     # For find last page index

@@ -1,3 +1,4 @@
+aenum==3.1.11
 amqp==5.1.1
 argcomplete==2.0.0
 asgiref==3.5.2
@@ -8,8 +9,11 @@ backcall==0.1.0
 Beaker==1.10.0
 beautifulsoup4==4.11.0
 billiard==3.6.4.0
+binaryiotools==2021.0.3
+blendmodes==2022
 blivet==3.4.4
 blivet-gui==2.3.0
+brackettree==0.2.5
 Brlapi==0.8.3
 Brotli==1.0.9
 celery==5.2.7
@@ -22,6 +26,7 @@ click==8.0.4
 click-didyoumean==0.3.0
 click-plugins==1.1.1
 click-repl==0.2.0
+comtypes==1.1.11
 configobj==5.0.6
 cryptography==36.0.0
 cupshelpers==1.0
@@ -29,6 +34,7 @@ dasbus==1.6
 dbus-python==1.2.18
 decorator==4.0.11
 Deprecated==1.2.13
+deprecation==2.1.0
 distlib==0.3.4
 distro==1.6.0
 Django==4.0.5
@@ -37,13 +43,17 @@ django-celery-results==2.3.1
 django-filter==21.1
 django-timezone-field==5.0
 djangorestframework==3.13.1
+docopt==0.6.2
 executing==0.8.2
+ExifRead==3.0.0
 fedora-third-party==0.10
 filelock==3.7.1
 filetype==1.0.5
 fros==1.1
 future==0.18.2
+gimpformats==2022.0.1
 gpg==1.15.1
+gunicorn==20.1.0
 huepy==1.2.1
 humanize==3.13.1
 idna==3.3
@@ -53,6 +63,7 @@ iniconfig==1.1.1
 instabot==0.117.0
 instagram-private-api==1.6.0.0
 instagram-private-api-extensions==0.3.8
+instagrapi==1.16.20
 instapy-cli==0.0.12
 ipython==8.3.0
 jedi==0.18.1
@@ -73,9 +84,11 @@ nltk==3.7
 numpy==1.22.4
 olefile==0.46
 packaging==21.3
+packbits==0.6
 parso==0.8.2
 Paste==3.5.0
 pexpect==4.8.0
+photoshop-python-api==0.19.3
 pickleshare==0.7.5
 pid==2.2.3
 Pillow==9.1.0
@@ -85,6 +98,7 @@ ply==3.11
 productmd==1.33
 proglog==0.1.10
 prompt-toolkit==3.0.24
+psd-tools3==1.8.2
 psutil==5.8.0
 psycopg2-binary==2.9.3
 ptyprocess==0.6.0
@@ -93,12 +107,14 @@ pwquality==1.4.4
 py==1.11.0
 pyaes==1.6.1
 pyasn1==0.4.8
+PyBundle==1.0.6
 pycairo==1.21.0
 pycparser==2.20
 pycrypto==2.6.1
-pycryptodomex==3.14.1
+pycryptodomex==3.15.0
 pycups==2.0.1
 pycurl==7.45.1
+pydantic==1.9.1
 pyenchant==3.2.2
 Pygments==2.11.2
 PyGObject==3.42.1
@@ -117,7 +133,7 @@ pytz==2022.1
 pyudev==0.22.0
 pyxdg==0.27
 redis==4.3.3
-regex==2022.4.24
+regex==2022.6.2
 requests==2.27.1
 requests-file==1.5.1
 requests-ftp==0.3.1
@@ -136,6 +152,7 @@ sos==4.3
 soupsieve==2.3.1
 sqlparse==0.4.2
 stack-data==0.1.4
+svglue==0.3.0
 systemd-python==234
 telebot==0.0.4
 Telethon==1.24.0
@@ -145,6 +162,7 @@ textblob==0.17.1
 tomli==2.0.1
 tqdm==4.64.0
 traitlets==5.1.1
+typing_extensions==4.2.0
 tzdata==2022.1
 urllib3==1.26.8
 vine==5.0.0

@@ -182,7 +182,7 @@ def getCourseIdFromURL(connection,url):
 
     for i in getAllExistCourses(connection):
 
-        if url in i[4]:
+        if url in i[-1]:
 
             u_id = str(i[0])
             return u_id[:8]+"-"+u_id[8:12]+"-"+u_id[12:16]+"-"+u_id[16:20]+"-"+u_id[20:]
@@ -239,7 +239,7 @@ def getScore(cast,buy_count,time,rank,teacher_score):
     if not(teacher_score):
         teacher_score =0
 
-    return (cast//100 + (2*buy_count) + time + (3*rank) + teacher_score//100) // 100
+    return (cast//100 + (buy_count) + time + (3*rank) + teacher_score//100) // 100
 
 
 def getCourseRank(connection,id):
@@ -326,13 +326,12 @@ def save_course_in_db(connection,all_tag,course_list,d,master,title,cast,time,bu
             'price':cast,
             'url':link,
             'students':buy_count,
-            'time':str(time),
+            'time':int(time),
             'lang':"FA",
             'score': int(getScore((cast),(buy_count),(time),0,0)),
             'time_str':time_str
         }
         auth = ('mahdi', 'M@hdi1380')
-
 
         res_cc = requests.post( DOMAIN + 'api/create/course/',json=d,auth=auth)
         if res_cc.status_code == 201:
