@@ -4,7 +4,7 @@ from .search import search
 from .auth import forgetPass,authorize,publisherSignin,publisherForgetPass
 from django.http import HttpResponseRedirect, JsonResponse
 from django.core.paginator import Paginator
-from .makeMonney import clickBtn,goToIDPAY,addAmountInCredit
+from .makeMonney import *
 from .community import addComment
 from django.db.models import Q
 from django.views.decorators.csrf import csrf_exempt
@@ -271,6 +271,10 @@ def publisher (request):
 
 
 def requestPartnership(request):
+
+    if request.POST.get('wURL'):
+        print("0k")
+        newPublisher(request,models.Publisher)
 
     newsLetter = request.POST.get("EMAIL")
     if newsLetter:

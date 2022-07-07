@@ -74,3 +74,15 @@ def addAmountInCredit(amount,publisher,Credit):
 
     return True
 
+
+def newPublisher(request,Publisher):
+
+    w_name = request.POST.get("wName")
+    w_url = request.POST.get("wURL")
+    w_phone = request.POST.get("phone")
+    w_pass = request.POST.get("wPass")
+    w_confPass = request.POST.get("wConfPass")
+    w_img = request.POST.get("img")
+
+    if w_pass == w_confPass:
+        Publisher.objects.create(name=w_name,password=w_pass,url=w_url,connectionWay=w_phone,img=w_img).save()

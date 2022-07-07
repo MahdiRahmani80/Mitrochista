@@ -3,12 +3,39 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="An impressive and flawless site template that includes various UI elements and countless features, attractive ready-made blocks and rich pages, basically everything you need to create a unique and professional website.">
-  <meta name="keywords" content="bootstrap 5, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template">
-  <meta name="author" content="elemis">
-  <title>Mitrochista - Explore - Course Search Engine Platform</title>
+  <meta charset='UTF-8'>
+  <meta name='keywords' content='درخواست همکاری، میتروچیستا، فروش، افزایش فروش، افزایش فروش دوره ، همکاری در فروش'>
+  <meta name='description' content='میتروچیستا بهتون کمک میکنه تا دوره های آنلاینتون رو بهتر بفروشید'>
+  <meta name='subject' content='میتروچیستا، موتور جستجوی دوره ها!'>
+  <meta name='copyright' content='mitrochista'>
+  <meta name='language' content='FA'>
+  <meta name='robots' content='index,follow'>
+  <meta name='abstract' content='موتور جستجوی دوره ها شما را قادر میسازد تا دوره های مد نظرتان را با قیمت مناسب تر، کیفیت بالاتر داشته باشید'>
+  <meta name='topic' content='جستجو بر روی آموزش های آنلاین'>
+  <meta name='summary' content='موتور جستجوی دوره های آنلاین'>
+  <meta name='Classification' content='Business'>
+  <meta name='author' content='mahdi rahmani, mahdirahmani8@yahoo.com'>
+  <meta name='designer' content='mahdi rahmani'>
+  <meta name='owner' content='Mitrochista'>
+  <meta name='url' content='http://www.mitrochista.ir/'>
+  <meta name='identifier-URL' content='http://www.mitrochista.ir/'>
+  <meta name='directory' content='submission'>
+  <meta name='category' content='search'>
+  <meta name='coverage' content='Worldwide'>
+  <meta name='distribution' content='Global'>
+  <meta name='rating' content='General'>
+  <meta name='revisit-after' content='7 days'>
+  <meta name='subtitle' content='@mitrochista'>
+  <meta name='target' content='all'>
+  <meta name='HandheldFriendly' content='True'>
+  <meta name='MobileOptimized' content='320'>
+  <meta name='ResourceLoaderDynamicStyles' content=''>
+  <meta http-equiv='Cache-Control' content='no-cache'>
+  <meta http-equiv='imagetoolbar' content='no'>
+  <meta http-equiv='x-dns-prefetch-control' content='off'>
+
+
+    <title>میتروچیستا ، پلتفرم جستجوی آنلاین دوره ها</title>
   <link rel="shortcut icon" href="{% static './img/Mitrochista.png' %}">
   <link rel="stylesheet" href="{% static './assets/css/plugins.css' %}">
   <link rel="stylesheet" href="{% static './assets/css/style.css' %}">
@@ -336,51 +363,57 @@
                         <br><br>
 
 
-                        <form class="contact-form needs-validation" method="post" novalidate>
+                        <form class="contact-form needs-validation" method="post" enctype="multipart/form-data" novalidate>
                           {% csrf_token %}
                           <div class="messages"></div>
                           <div class="row gx-4">
                             <div class="col-md-6" >
                               <div class="form-floating mb-4">
-                                <input id="form_name" dir="auto" type="text" name="name" class="form-control" placeholder="Jane" required>
+                                <input id="form_name" dir="auto" type="text" name="wName" class="form-control" placeholder="Jane" required>
                                 <label for="form_name">نام وبسایت *</label>
                               </div>
                             </div>
-                            <!-- /column -->
                             <div class="col-md-6">
                               <div class="form-floating mb-4">
-                                <input id="form_lastname" dir="auto" type="text" name="surname" class="form-control" placeholder="Doe" required>
-                                <label for="form_lastname">Last Name *</label>
+                                <input id="form_email" dir="auto" type="email" name="phone" class="form-control" placeholder="jane.doe@example.com" required>
+                                <label for="form_email">تلفن همراه *</label>
+                              </div>
+                            </div>
+                            <!-- /column -->
+                            <!-- /column -->
+                            <div class="col-md-6">
+                              <div class="form-floating password-field  mb-4">
+                                <input id="form_pass" dir="auto" type="password" name="wPass" class="form-control " placeholder="Doe" required>
+                                <span class="password-toggle"><i class="uil uil-eye"></i></span>
+                                <label for="form_pass">رمزعبور *</label>
                               </div>
                             </div>
                             <!-- /column -->
                             <div class="col-md-6">
+                              <div class="form-floating password-field mb-4">
+                                <input id="form_confPass" dir="auto" type="password" name="wConfPass" class="form-control" placeholder="Doe" required>
+                                <span class="password-toggle"><i class="uil uil-eye"></i></span>
+                                <label for="form_confPass">تکرار رمزعبور *</label>
+                              </div>
+                            </div>
+                            <!-- /column -->
+
+                            <div class="col-md-6">
                               <div class="form-floating mb-4">
-                                <input id="form_email" dir="auto" type="email" name="email" class="form-control" placeholder="jane.doe@example.com" required>
-                                <label for="form_email">Email *</label>
+                                <input id="form_email" dir="auto" type="url" name="wURL" class="form-control" placeholder="jane.doe@example.com" required>
+                                <label for="form_email">آدرس وبسایت شما *</label>
                               </div>
                             </div>
                             <!-- /column -->
                             <div class="col-md-6">
-                              <div class="form-select-wrapper mb-4">
-                                <select class="form-select" id="form-select" name="department" required>
-                                  <option selected disabled value="">Select a department</option>
-                                  <option value="Sales">Sales</option>
-                                  <option value="Marketing">Marketing</option>
-                                  <option value="Customer Support">Customer Support</option>
-                                </select>
-                              </div>
+                              <input id="form_email" dir="auto" type="file" name="img" class="form-control"  required>
+                              <p dir="auto">* لوگو وبسایت شما</p>
                             </div>
                             <!-- /column -->
-                            <div class="col-12">
-                              <div class="form-floating mb-4">
-                                <textarea id="form_message" dir="auto" name="message" class="form-control" placeholder="Your message" style="height: 150px" required></textarea>
-                                <label for="form_message">Message *</label>
-                              </div>
-                            </div>
-                            <!-- /column -->
+
                             <div class="col-12 text-center">
-                              <input type="submit" class="btn btn-primary rounded-pill btn-send mb-3" value="Send message">
+                              <br>
+                              <input type="submit" class="btn btn-primary rounded-pill btn-send mb-3" value="ارسال مشخصات">
                             </div>
                             <!-- /column -->
                           </div>

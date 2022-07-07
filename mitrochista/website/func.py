@@ -183,6 +183,7 @@ def getCourseIdFromURL(connection,url):
     for i in getAllExistCourses(connection):
 
         if url in i[-1]:
+            
 
             u_id = str(i[0])
             return u_id[:8]+"-"+u_id[8:12]+"-"+u_id[12:16]+"-"+u_id[16:20]+"-"+u_id[20:]

@@ -62,7 +62,7 @@ class Publisher (models.Model):
     connectionWay =  models.CharField(max_length=600,help_text="email or phone",unique=True)
     img = models.ImageField(upload_to="Publisher/Image")
     SEORank = models.BigIntegerField(default=0)
-    LastIndexed = models.DateTimeField()
+    LastIndexed = models.DateTimeField(auto_now_add=True)
     CreatedDate = models.DateTimeField(auto_now_add=True)
     isScrapAlgorithmWrite = models.BooleanField("Is Published",default=False)
     isUP = models.BooleanField(default=False)

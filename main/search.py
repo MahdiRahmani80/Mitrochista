@@ -87,7 +87,7 @@ def getResultWord(i,courseTag,ordering):
 
 
     if not ordering:
-        for j in courseTag.objects.filter( tag__name__icontains= stemmer.stem(str(i))  ):
+        for j in courseTag.objects.filter( tag__name__icontains= stemmer.stem(str(i))  ).order_by("-course__score"):
 
                 count=-1
                 for r in j.tag.filter(name=str(i)):
@@ -110,7 +110,7 @@ def getResultWord(i,courseTag,ordering):
 
         for j in courseTag.objects.filter(
                 Q( tag__name__icontains= stemmer.stem(str(i))) &
-                Q( course__price=0 )  ):
+                Q( course__price=0 )  ).order_by("-course__score"):
 
                 count=-1
                 for r in j.tag.filter(name=str(i)):
